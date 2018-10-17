@@ -10,7 +10,16 @@ import UIKit
 
 class FiltersViewController: UIViewController {
 
-    let filters: [Category] = [.youtube, .twitter, .music]
+    private let filters: [Category] = [.youtube, .twitter, .music]
+    @IBOutlet private weak var tableView: UITableView!
+    
+    @IBAction private func allButtonTap(_ sender: Any) {
+        if tableView.indexPathsForSelectedRows?.count == filters.count {
+            tableView.deselectAllRows(animated: true)
+        } else {
+            tableView.selectAllRows(animated: true)
+        }
+    }
 }
 
 //MARK: - UITableViewDataSource

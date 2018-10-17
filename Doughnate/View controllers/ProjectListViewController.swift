@@ -51,18 +51,30 @@ private extension ProjectListViewController {
 //MARK: - UITableViewDataSource
 extension ProjectListViewController: UITableViewDataSource {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return projects.count
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(ofType: ProjectTableViewCell.self, for: indexPath)
-        let project = projects[indexPath.row]
+        let project = projects[indexPath.section]
         cell.projectNameLabel.text = project.name
         cell.descriptionLabel.text = project.description
         cell.subscribersLabel.text = project.subscribersString
         cell.categoryView.backgroundColor = project.category.color
         return cell
+    }
+}
+
+//MARK: - UITableViewDelegate
+extension ProjectListViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 10.0
     }
 }
 

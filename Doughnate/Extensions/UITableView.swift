@@ -17,4 +17,17 @@ extension UITableView {
         }
         return cell
     }
+    
+    func deselectAllRows(animated: Bool) {
+        indexPathsForSelectedRows?.forEach { deselectRow(at: $0, animated: animated) }
+    }
+    
+    func selectAllRows(animated: Bool) {
+        (0..<numberOfSections).forEach { section in
+            (0..<numberOfRows(inSection: section)).forEach { row in
+                let indexPath = IndexPath(row: row, section: section)
+                selectRow(at: indexPath, animated: true, scrollPosition: .none)
+            }
+        }
+    }
 }
