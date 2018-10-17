@@ -18,6 +18,8 @@
 		D1FC0DB821772B9100A058F1 /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FC0DB721772B9100A058F1 /* UITableViewCell.swift */; };
 		D1FC0DBA21772CC700A058F1 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FC0DB921772CC700A058F1 /* Int.swift */; };
 		D1FC0DBC21772DC200A058F1 /* NumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FC0DBB21772DC200A058F1 /* NumberFormatter.swift */; };
+		D1FC0DBE2177303600A058F1 /* ProjectDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FC0DBD2177303600A058F1 /* ProjectDetailsViewController.swift */; };
+		D1FC0DC02177389000A058F1 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D1FC0DBF2177389000A058F1 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		D1FC0DB721772B9100A058F1 /* UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
 		D1FC0DB921772CC700A058F1 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		D1FC0DBB21772DC200A058F1 /* NumberFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatter.swift; sourceTree = "<group>"; };
+		D1FC0DBD2177303600A058F1 /* ProjectDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailsViewController.swift; sourceTree = "<group>"; };
+		D1FC0DBF2177389000A058F1 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +54,7 @@
 		D1FC0D8E2177247400A058F1 = {
 			isa = PBXGroup;
 			children = (
+				D1FC0DBF2177389000A058F1 /* .gitignore */,
 				D1FC0D992177247400A058F1 /* Doughnate */,
 				D1FC0D982177247400A058F1 /* Products */,
 			);
@@ -83,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				D1FC0D9C2177247400A058F1 /* ProjectListViewController.swift */,
+				D1FC0DBD2177303600A058F1 /* ProjectDetailsViewController.swift */,
 			);
 			path = "View controllers";
 			sourceTree = "<group>";
@@ -180,6 +186,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1FC0DC02177389000A058F1 /* .gitignore in Resources */,
 				D1FC0DA52177247500A058F1 /* LaunchScreen.storyboard in Resources */,
 				D1FC0DA22177247500A058F1 /* Assets.xcassets in Resources */,
 				D1FC0DA02177247400A058F1 /* Main.storyboard in Resources */,
@@ -199,6 +206,7 @@
 				D1FC0DBA21772CC700A058F1 /* Int.swift in Sources */,
 				D1FC0DB821772B9100A058F1 /* UITableViewCell.swift in Sources */,
 				D1FC0DBC21772DC200A058F1 /* NumberFormatter.swift in Sources */,
+				D1FC0DBE2177303600A058F1 /* ProjectDetailsViewController.swift in Sources */,
 				D1FC0DAF21772AAA00A058F1 /* Project.swift in Sources */,
 				D1FC0DB321772B1B00A058F1 /* ProjectTableViewCell.swift in Sources */,
 			);

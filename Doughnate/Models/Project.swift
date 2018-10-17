@@ -12,4 +12,8 @@ struct Project {
     let name: String
     let description: String
     let subscribers: Int
+    
+    var subscribersString: String {
+        return subscribers.shortString + " subscribers"
+    }
 }
