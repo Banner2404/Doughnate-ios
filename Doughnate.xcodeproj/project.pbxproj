@@ -20,6 +20,9 @@
 		D1FC0DBC21772DC200A058F1 /* NumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FC0DBB21772DC200A058F1 /* NumberFormatter.swift */; };
 		D1FC0DBE2177303600A058F1 /* ProjectDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FC0DBD2177303600A058F1 /* ProjectDetailsViewController.swift */; };
 		D1FC0DC02177389000A058F1 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D1FC0DBF2177389000A058F1 /* .gitignore */; };
+		D1FC0DC2217739F500A058F1 /* FiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FC0DC1217739F500A058F1 /* FiltersViewController.swift */; };
+		D1FC0DC421775D0500A058F1 /* FilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FC0DC321775D0500A058F1 /* FilterTableViewCell.swift */; };
+		D1FC0DC621775F6700A058F1 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FC0DC521775F6700A058F1 /* Filter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		D1FC0DBB21772DC200A058F1 /* NumberFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatter.swift; sourceTree = "<group>"; };
 		D1FC0DBD2177303600A058F1 /* ProjectDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailsViewController.swift; sourceTree = "<group>"; };
 		D1FC0DBF2177389000A058F1 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		D1FC0DC1217739F500A058F1 /* FiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewController.swift; sourceTree = "<group>"; };
+		D1FC0DC321775D0500A058F1 /* FilterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTableViewCell.swift; sourceTree = "<group>"; };
+		D1FC0DC521775F6700A058F1 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				D1FC0D9C2177247400A058F1 /* ProjectListViewController.swift */,
+				D1FC0DC1217739F500A058F1 /* FiltersViewController.swift */,
 				D1FC0DBD2177303600A058F1 /* ProjectDetailsViewController.swift */,
 			);
 			path = "View controllers";
@@ -97,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				D1FC0DAE21772AAA00A058F1 /* Project.swift */,
+				D1FC0DC521775F6700A058F1 /* Filter.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -113,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				D1FC0DB221772B1B00A058F1 /* ProjectTableViewCell.swift */,
+				D1FC0DC321775D0500A058F1 /* FilterTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -201,12 +210,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1FC0D9D2177247400A058F1 /* ProjectListViewController.swift in Sources */,
+				D1FC0DC621775F6700A058F1 /* Filter.swift in Sources */,
 				D1FC0D9B2177247400A058F1 /* AppDelegate.swift in Sources */,
 				D1FC0DB621772B5200A058F1 /* UITableView.swift in Sources */,
 				D1FC0DBA21772CC700A058F1 /* Int.swift in Sources */,
+				D1FC0DC2217739F500A058F1 /* FiltersViewController.swift in Sources */,
 				D1FC0DB821772B9100A058F1 /* UITableViewCell.swift in Sources */,
 				D1FC0DBC21772DC200A058F1 /* NumberFormatter.swift in Sources */,
 				D1FC0DBE2177303600A058F1 /* ProjectDetailsViewController.swift in Sources */,
+				D1FC0DC421775D0500A058F1 /* FilterTableViewCell.swift in Sources */,
 				D1FC0DAF21772AAA00A058F1 /* Project.swift in Sources */,
 				D1FC0DB321772B1B00A058F1 /* ProjectTableViewCell.swift in Sources */,
 			);

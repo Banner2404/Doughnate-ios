@@ -32,16 +32,16 @@ private extension ProjectListViewController {
     func loadProjects() {
         tableView.isHidden = true
         spinnerView.isHidden = false
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             self.tableView.isHidden = false
             self.spinnerView.isHidden = true
             self.projects = [
-                Project.init(name: "Wylsacom", description: "Best tech channel about iPhones", subscribers: 123456789),
-                Project.init(name: "Elon Musk", description: "Business magnate and investor", subscribers: 100),
-                Project.init(name: "Taylow Swift", description: "Music", subscribers: 63243),
-                Project.init(name: "Wylsacom", description: "Best tech channel about iPhones", subscribers: 10),
-                Project.init(name: "Wylsacom", description: "Best tech channel about iPhones", subscribers: 9354235432),
-                Project.init(name: "Wylsacom", description: "Best tech channel about iPhones", subscribers: 9343233)]
+                Project.init(name: "Wylsacom", description: "Best tech channel about iPhones", subscribers: 123456789, category: .youtube),
+                Project.init(name: "Elon Musk", description: "Business magnate and investor", subscribers: 100, category: .twitter),
+                Project.init(name: "Taylow Swift", description: "Music", subscribers: 63243, category: .music),
+                Project.init(name: "Wylsacom", description: "Best tech channel about iPhones", subscribers: 10, category: .youtube),
+                Project.init(name: "Wylsacom", description: "Best tech channel about iPhones", subscribers: 9354235432, category: .youtube),
+                Project.init(name: "Wylsacom", description: "Best tech channel about iPhones", subscribers: 9343233, category: .youtube)]
             
             self.tableView.reloadData()
         }
@@ -61,6 +61,7 @@ extension ProjectListViewController: UITableViewDataSource {
         cell.projectNameLabel.text = project.name
         cell.descriptionLabel.text = project.description
         cell.subscribersLabel.text = project.subscribersString
+        cell.categoryView.backgroundColor = project.category.color
         return cell
     }
 }

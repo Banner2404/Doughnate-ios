@@ -12,6 +12,7 @@ struct Project {
     let name: String
     let description: String
     let subscribers: Int
+    let category: Category
     
     var subscribersString: String {
         return subscribers.shortString + " subscribers"
