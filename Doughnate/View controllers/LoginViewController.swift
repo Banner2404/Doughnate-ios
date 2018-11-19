@@ -13,13 +13,10 @@ class LoginViewController: UIViewController {
     @IBOutlet private weak var emailTextField: UITextField!
     @IBOutlet private weak var passwordTextField: UITextField!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
     
     @IBAction private func loginButtonTap(_ sender: Any) {
-        UserManager.shared.authenticate(with: Token(accessToken: "hello"))
+        UserManager.shared.authenticate(with: User(firstName: "hello", lastName: "Wordl", email: "email@test.com"),
+                                        token: Token(accessToken: "hello"))
         dismiss(animated: true, completion: nil)
     }
     

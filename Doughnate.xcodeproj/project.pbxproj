@@ -15,6 +15,8 @@
 		D11B25A021A2DC4F00ADC7F9 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11B259F21A2DC4F00ADC7F9 /* Token.swift */; };
 		D11B25A221A2DE4400ADC7F9 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11B25A121A2DE4400ADC7F9 /* TabBarController.swift */; };
 		D11B25A421A2DF6B00ADC7F9 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11B25A321A2DF6B00ADC7F9 /* ProfileTableViewController.swift */; };
+		D11B25A621A2E30100ADC7F9 /* AccountSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11B25A521A2E30100ADC7F9 /* AccountSettingsTableViewController.swift */; };
+		D11B25A821A2E33C00ADC7F9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11B25A721A2E33C00ADC7F9 /* User.swift */; };
 		D1FC0D9B2177247400A058F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FC0D9A2177247400A058F1 /* AppDelegate.swift */; };
 		D1FC0D9D2177247400A058F1 /* ProjectListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FC0D9C2177247400A058F1 /* ProjectListViewController.swift */; };
 		D1FC0DA02177247400A058F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1FC0D9E2177247400A058F1 /* Main.storyboard */; };
@@ -45,6 +47,8 @@
 		D11B259F21A2DC4F00ADC7F9 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		D11B25A121A2DE4400ADC7F9 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		D11B25A321A2DF6B00ADC7F9 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
+		D11B25A521A2E30100ADC7F9 /* AccountSettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsTableViewController.swift; sourceTree = "<group>"; };
+		D11B25A721A2E33C00ADC7F9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D1FC0D972177247400A058F1 /* Doughnate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Doughnate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1FC0D9A2177247400A058F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1FC0D9C2177247400A058F1 /* ProjectListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectListViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +152,7 @@
 				D1FC0DC1217739F500A058F1 /* FiltersViewController.swift */,
 				D1FC0DBD2177303600A058F1 /* ProjectDetailsViewController.swift */,
 				D11B25A321A2DF6B00ADC7F9 /* ProfileTableViewController.swift */,
+				D11B25A521A2E30100ADC7F9 /* AccountSettingsTableViewController.swift */,
 				D11B259621A2C52D00ADC7F9 /* LoginViewController.swift */,
 				D11B259821A2C66600ADC7F9 /* SignUpViewController.swift */,
 			);
@@ -160,6 +165,7 @@
 				D1FC0DAE21772AAA00A058F1 /* Project.swift */,
 				D1FC0DC521775F6700A058F1 /* Filter.swift */,
 				D11B259F21A2DC4F00ADC7F9 /* Token.swift */,
+				D11B25A721A2E33C00ADC7F9 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -314,6 +320,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D11B25A621A2E30100ADC7F9 /* AccountSettingsTableViewController.swift in Sources */,
 				D11B259721A2C52D00ADC7F9 /* LoginViewController.swift in Sources */,
 				D1FC0D9D2177247400A058F1 /* ProjectListViewController.swift in Sources */,
 				D1FC0DC621775F6700A058F1 /* Filter.swift in Sources */,
@@ -323,6 +330,7 @@
 				D11B25A421A2DF6B00ADC7F9 /* ProfileTableViewController.swift in Sources */,
 				D11B259E21A2CD8200ADC7F9 /* KeychainManager.swift in Sources */,
 				D11B259C21A2C87A00ADC7F9 /* UserManager.swift in Sources */,
+				D11B25A821A2E33C00ADC7F9 /* User.swift in Sources */,
 				D1FC0DC2217739F500A058F1 /* FiltersViewController.swift in Sources */,
 				D11B25A021A2DC4F00ADC7F9 /* Token.swift in Sources */,
 				D11B25A221A2DE4400ADC7F9 /* TabBarController.swift in Sources */,
