@@ -23,6 +23,7 @@
 		D1FC0DC2217739F500A058F1 /* FiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FC0DC1217739F500A058F1 /* FiltersViewController.swift */; };
 		D1FC0DC421775D0500A058F1 /* FilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FC0DC321775D0500A058F1 /* FilterTableViewCell.swift */; };
 		D1FC0DC621775F6700A058F1 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FC0DC521775F6700A058F1 /* Filter.swift */; };
+		D1FC0DC92177722300A058F1 /* ReplaceLastSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FC0DC82177722300A058F1 /* ReplaceLastSegue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		D1FC0DC1217739F500A058F1 /* FiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewController.swift; sourceTree = "<group>"; };
 		D1FC0DC321775D0500A058F1 /* FilterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTableViewCell.swift; sourceTree = "<group>"; };
 		D1FC0DC521775F6700A058F1 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		D1FC0DC82177722300A058F1 /* ReplaceLastSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplaceLastSegue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 		D1FC0DB021772AF800A058F1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D1FC0DC72177720F00A058F1 /* Segues */,
 				D1FC0DB121772B0700A058F1 /* Cells */,
 			);
 			path = Views;
@@ -135,6 +138,14 @@
 				D1FC0DBB21772DC200A058F1 /* NumberFormatter.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D1FC0DC72177720F00A058F1 /* Segues */ = {
+			isa = PBXGroup;
+			children = (
+				D1FC0DC82177722300A058F1 /* ReplaceLastSegue.swift */,
+			);
+			path = Segues;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,6 +227,7 @@
 				D1FC0DBA21772CC700A058F1 /* Int.swift in Sources */,
 				D1FC0DC2217739F500A058F1 /* FiltersViewController.swift in Sources */,
 				D1FC0DB821772B9100A058F1 /* UITableViewCell.swift in Sources */,
+				D1FC0DC92177722300A058F1 /* ReplaceLastSegue.swift in Sources */,
 				D1FC0DBC21772DC200A058F1 /* NumberFormatter.swift in Sources */,
 				D1FC0DBE2177303600A058F1 /* ProjectDetailsViewController.swift in Sources */,
 				D1FC0DC421775D0500A058F1 /* FilterTableViewCell.swift in Sources */,
