@@ -381,7 +381,7 @@
         <!--Doughnate-->
         <scene sceneID="JjX-St-k5E">
             <objects>
-                <viewController id="fic-pZ-fKH" sceneMemberID="viewController">
+                <viewController id="fic-pZ-fKH" customClass="LoginViewController" customModule="Doughnate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6eH-jb-yDY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -397,18 +397,27 @@
                                 <state key="normal" title="Log In">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginButtonTap:" destination="fic-pZ-fKH" eventType="touchUpInside" id="xcZ-80-hZz"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Phw-c2-H3A">
                                 <rect key="frame" x="50" y="134" width="275" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="username"/>
+                                <connections>
+                                    <outlet property="delegate" destination="fic-pZ-fKH" id="pfF-SP-nDD"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cHJ-ME-oT6">
                                 <rect key="frame" x="50" y="184" width="275" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                <connections>
+                                    <outlet property="delegate" destination="fic-pZ-fKH" id="7zn-GM-Z3X"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don’t have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c35-Sc-Hj9">
                                 <rect key="frame" x="97.5" y="364" width="180" height="21"/>
@@ -446,6 +455,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="Doughnate" id="Qb8-ct-rHQ"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="Phw-c2-H3A" id="4Cm-BC-wCt"/>
+                        <outlet property="passwordTextField" destination="cHJ-ME-oT6" id="j3G-Ef-JMU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UN4-uQ-QVV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -454,7 +467,7 @@
         <!--Doughnate-->
         <scene sceneID="IAq-Ip-7bN">
             <objects>
-                <viewController id="mtW-4V-5md" sceneMemberID="viewController">
+                <viewController id="mtW-4V-5md" customClass="SignUpViewController" customModule="Doughnate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="N9q-Fv-fo9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -482,6 +495,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="username"/>
+                                <connections>
+                                    <outlet property="delegate" destination="mtW-4V-5md" id="4LJ-6j-N3d"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gQg-Yt-oD3">
                                 <rect key="frame" x="161.5" y="435" width="52" height="34"/>
@@ -498,12 +514,18 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                <connections>
+                                    <outlet property="delegate" destination="mtW-4V-5md" id="pJh-pi-PZh"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Repeat Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wv9-6f-uGP">
                                 <rect key="frame" x="50" y="234" width="275" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                <connections>
+                                    <outlet property="delegate" destination="mtW-4V-5md" id="NRY-6E-NiE"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -529,6 +551,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Doughnate" id="3RN-xZ-Ql2"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="3eo-zS-4sb" id="Tqa-n1-fIZ"/>
+                        <outlet property="passwordTextField" destination="QdA-co-9NK" id="PyM-YC-PD5"/>
+                        <outlet property="repeatPasswordTextField" destination="wv9-6f-uGP" id="ENe-gr-tv8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P6p-B6-wse" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -636,7 +663,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="BG9-W8-25E"/>
         <segue reference="tEw-Vt-RWK"/>
     </inferredMetricsTieBreakers>
 </document>
