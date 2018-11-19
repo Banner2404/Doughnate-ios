@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		72323687D01ACA7B0E7C9834 /* Pods_Doughnate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96AB9934A9BF019EC2CEB8F7 /* Pods_Doughnate.framework */; };
 		D11B259721A2C52D00ADC7F9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11B259621A2C52D00ADC7F9 /* LoginViewController.swift */; };
 		D11B259921A2C66600ADC7F9 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11B259821A2C66600ADC7F9 /* SignUpViewController.swift */; };
 		D11B259C21A2C87A00ADC7F9 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11B259B21A2C87A00ADC7F9 /* UserManager.swift */; };
@@ -30,6 +31,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B63174CF22EEF1D6072D336 /* Pods-Doughnate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doughnate.release.xcconfig"; path = "Pods/Target Support Files/Pods-Doughnate/Pods-Doughnate.release.xcconfig"; sourceTree = "<group>"; };
+		645CE2C1FA4618ED2CDA2A49 /* Pods-Doughnate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doughnate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Doughnate/Pods-Doughnate.debug.xcconfig"; sourceTree = "<group>"; };
+		96AB9934A9BF019EC2CEB8F7 /* Pods_Doughnate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Doughnate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D11B259621A2C52D00ADC7F9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D11B259821A2C66600ADC7F9 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		D11B259B21A2C87A00ADC7F9 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
@@ -59,12 +63,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72323687D01ACA7B0E7C9834 /* Pods_Doughnate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03F6C4D180ABCFF0AB4A5B86 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				645CE2C1FA4618ED2CDA2A49 /* Pods-Doughnate.debug.xcconfig */,
+				4B63174CF22EEF1D6072D336 /* Pods-Doughnate.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B2939C02018484C346121D9E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				96AB9934A9BF019EC2CEB8F7 /* Pods_Doughnate.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D11B259A21A2C86A00ADC7F9 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +101,8 @@
 				D1FC0DBF2177389000A058F1 /* .gitignore */,
 				D1FC0D992177247400A058F1 /* Doughnate */,
 				D1FC0D982177247400A058F1 /* Products */,
+				03F6C4D180ABCFF0AB4A5B86 /* Pods */,
+				B2939C02018484C346121D9E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -172,9 +196,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D1FC0DA92177247500A058F1 /* Build configuration list for PBXNativeTarget "Doughnate" */;
 			buildPhases = (
+				366F0AA9E9B7718DB2D16FC9 /* [CP] Check Pods Manifest.lock */,
 				D1FC0D932177247400A058F1 /* Sources */,
 				D1FC0D942177247400A058F1 /* Frameworks */,
 				D1FC0D952177247400A058F1 /* Resources */,
+				C6F52CFB4CC89C8E1C1EB33B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -231,6 +257,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		366F0AA9E9B7718DB2D16FC9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Doughnate-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6F52CFB4CC89C8E1C1EB33B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Doughnate/Pods-Doughnate-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Doughnate/Pods-Doughnate-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D1FC0D932177247400A058F1 /* Sources */ = {
@@ -396,6 +461,7 @@
 		};
 		D1FC0DAA2177247500A058F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 645CE2C1FA4618ED2CDA2A49 /* Pods-Doughnate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -414,6 +480,7 @@
 		};
 		D1FC0DAB2177247500A058F1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B63174CF22EEF1D6072D336 /* Pods-Doughnate.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
