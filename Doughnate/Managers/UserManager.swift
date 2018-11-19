@@ -10,8 +10,29 @@ import Foundation
 
 class UserManager {
     
-    static let shared = UserManager()
-    var isAuthenticated = false
+    static let shared = UserManager(keychainManager: .shared)
+    private(set) var token: Token?
+    var isAuthenticated: Bool {
+        return token != nil
+    }
     
-    private init() {}
+    private let keychainManager: KeychainManager
+    
+    private init(keychainManager: KeychainManager) {
+        self.keychainManager = keychainManager
+    }
+    
+    func authenticate(with token: Token) {
+        self.token = token
+        keychainManager.save(token)
+    }
+    
+    func unauthenticate() {
+        self.token = nil
+        keychainManager.deleteToken()
+    }
+    
+    func restoreCredentials() {
+        self.token = keychainManager.loadToken()
+    }
 }

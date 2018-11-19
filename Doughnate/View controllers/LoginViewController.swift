@@ -19,6 +19,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction private func loginButtonTap(_ sender: Any) {
+        UserManager.shared.authenticate(with: Token(accessToken: "hello"))
         dismiss(animated: true, completion: nil)
     }
     
