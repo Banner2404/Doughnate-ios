@@ -436,11 +436,15 @@
                                     <segue destination="mtW-4V-5md" kind="custom" customClass="ReplaceLastSegue" customModule="Doughnate" customModuleProvider="target" id="BG9-W8-25E"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="hXs-l0-VbS">
+                                <rect key="frame" x="77.5" y="279" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="22G-Sf-Age" firstAttribute="centerX" secondItem="6eH-jb-yDY" secondAttribute="centerX" id="8fA-0k-hVk"/>
                             <constraint firstItem="22G-Sf-Age" firstAttribute="top" secondItem="cHJ-ME-oT6" secondAttribute="bottom" constant="50" id="CXX-DM-4NN"/>
+                            <constraint firstItem="22G-Sf-Age" firstAttribute="leading" secondItem="hXs-l0-VbS" secondAttribute="trailing" constant="15" id="Khq-eA-gmE"/>
                             <constraint firstItem="Phw-c2-H3A" firstAttribute="top" secondItem="NBe-cY-hLv" secondAttribute="top" constant="70" id="Qg8-qO-qg6"/>
                             <constraint firstItem="cHJ-ME-oT6" firstAttribute="leading" secondItem="Phw-c2-H3A" secondAttribute="leading" id="SP1-sr-6oC"/>
                             <constraint firstItem="7gv-Xa-PWF" firstAttribute="top" secondItem="c35-Sc-Hj9" secondAttribute="bottom" constant="10" id="X1r-xJ-GMH"/>
@@ -450,6 +454,7 @@
                             <constraint firstItem="7gv-Xa-PWF" firstAttribute="centerX" secondItem="6eH-jb-yDY" secondAttribute="centerX" id="ldK-tI-jdV"/>
                             <constraint firstItem="Phw-c2-H3A" firstAttribute="leading" secondItem="NBe-cY-hLv" secondAttribute="leading" constant="50" id="lgX-Hr-CjA"/>
                             <constraint firstItem="c35-Sc-Hj9" firstAttribute="centerX" secondItem="6eH-jb-yDY" secondAttribute="centerX" id="txo-c7-8O9"/>
+                            <constraint firstItem="hXs-l0-VbS" firstAttribute="centerY" secondItem="22G-Sf-Age" secondAttribute="centerY" id="uH5-9j-EZm"/>
                             <constraint firstItem="cHJ-ME-oT6" firstAttribute="trailing" secondItem="Phw-c2-H3A" secondAttribute="trailing" id="ufA-8E-Dja"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NBe-cY-hLv"/>
@@ -457,6 +462,7 @@
                     <navigationItem key="navigationItem" title="Doughnate" id="Qb8-ct-rHQ"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="hXs-l0-VbS" id="WY9-Wx-JV0"/>
                         <outlet property="emailTextField" destination="Phw-c2-H3A" id="4Cm-BC-wCt"/>
                         <outlet property="passwordTextField" destination="cHJ-ME-oT6" id="j3G-Ef-JMU"/>
                     </connections>

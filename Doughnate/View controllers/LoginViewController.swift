@@ -10,14 +10,33 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet private weak var emailTextField: UITextField!
     @IBOutlet private weak var passwordTextField: UITextField!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        activityIndicator.stopAnimating()
+    }
     
     @IBAction private func loginButtonTap(_ sender: Any) {
-        UserManager.shared.authenticate(with: User(firstName: "hello", lastName: "Wordl", email: "email@test.com"),
-                                        token: Token(accessToken: "hello"))
-        dismiss(animated: true, completion: nil)
+        let email = emailTextField.text ?? ""
+        let password = passwordTextField.text ?? ""
+        activityIndicator.startAnimating()
+        emailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+        ApiManager.shared.login(email: email, password: password) { response in
+            self.activityIndicator.stopAnimating()
+            switch response {
+            case .failure(let error):
+                print(error)
+                self.showErrorAlert(with: "Incorrect credentials")
+            case .success(let token):
+                UserManager.shared.authenticate(with: User(firstName: "hello", lastName: "World", email: email),
+                                                token: token)
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
     }
     
 }
