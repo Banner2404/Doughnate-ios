@@ -13,4 +13,5 @@ enum NetworkError: Error {
     case incorrectResponse
     case unableToParse(Data)
     case statusCode(Int)
+    case smsVerificationRequired
 }

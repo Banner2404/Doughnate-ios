@@ -17,6 +17,23 @@ class ApiManager {
     
     func login(email: String, password: String, completion: @escaping ResponseCompletion<Token, NetworkError>) {
         let request = Requests.login(email: email, password: password)
+        networkManager.perform(request, responseType: Token.self) { response in
+            switch response {
+            case .failure(let error):
+                switch error {
+                case .unableToParse(let data) where ((try? JSONSerialization.jsonObject(with: data, options: [])) as? [String: Any])?["message"] != nil:
+                    completion(.failure(.smsVerificationRequired))
+                default:
+                    completion(.failure(error))
+                }
+            case .success(let token):
+                completion(.success(token))
+            }
+        }
+    }
+    
+    func loginSMS(code: String, completion: @escaping ResponseCompletion<Token, NetworkError>) {
+        let request = Requests.loginSMS(code: code)
         networkManager.perform(request, responseType: Token.self, completion: completion)
     }
     

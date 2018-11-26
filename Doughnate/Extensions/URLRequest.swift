@@ -22,6 +22,7 @@ extension URLRequest {
             self.httpBody = try? JSONSerialization.data(withJSONObject: body, options: [.prettyPrinted])
             self.addValue("application/json", forHTTPHeaderField: "Content-Type")
         }
+        self.addValue("application/json", forHTTPHeaderField: "Accept")
         headers.forEach { self.addValue($1, forHTTPHeaderField: $0) }
     }
     

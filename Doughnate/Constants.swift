@@ -10,5 +10,6 @@ import Foundation
 
 struct ApiUrl {
     
-    static let host = "http://doughnate.stasdeep.com"
+    static let host = "https://www.doughnate.online"
+    //static let host = "http://doughnate.stasdeep.com"
 }

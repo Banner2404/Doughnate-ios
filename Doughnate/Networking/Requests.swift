@@ -19,6 +19,14 @@ class Requests {
                           body: body)!
     }
     
+    static func loginSMS(code: String) -> URLRequest {
+        let body = ["code": code]
+        return URLRequest(method: .post,
+                          domain: ApiUrl.host,
+                          path: ["login_sms/"],
+                          body: body)!
+    }
+    
     static func signup(email: String, password: String) -> URLRequest {
         let body = ["email": email,
                     "password": password]

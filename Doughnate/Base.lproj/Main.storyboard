@@ -166,6 +166,64 @@
             </objects>
             <point key="canvasLocation" x="1959.2" y="133.5832083958021"/>
         </scene>
+        <!--Phone Verification-->
+        <scene sceneID="ClC-Uh-SF3">
+            <objects>
+                <viewController id="Toc-zk-TfQ" customClass="PhoneVerificationViewController" customModule="Doughnate" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="V71-h9-jej">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jYk-Z4-gYv">
+                                <rect key="frame" x="50" y="165" width="275" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" textContentType="one-time-code"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter code from SMS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FCc-go-7f1">
+                                <rect key="frame" x="78.5" y="114" width="218" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4mA-JZ-YY5">
+                                <rect key="frame" x="112.5" y="245" width="150" height="50"/>
+                                <color key="backgroundColor" red="0.88235294119999996" green="0.20784313730000001" blue="0.57254901960000004" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="IpC-pB-ZKt"/>
+                                    <constraint firstAttribute="width" constant="150" id="xd6-gf-6ht"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="signUpButtonTap:" destination="mtW-4V-5md" eventType="touchUpInside" id="wlL-LO-CDE"/>
+                                    <action selector="submitButtonTap:" destination="Toc-zk-TfQ" eventType="touchUpInside" id="BFz-rm-AmR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mlN-5w-2th" firstAttribute="trailing" secondItem="jYk-Z4-gYv" secondAttribute="trailing" constant="50" id="1KD-2T-F0q"/>
+                            <constraint firstItem="4mA-JZ-YY5" firstAttribute="top" secondItem="jYk-Z4-gYv" secondAttribute="bottom" constant="50" id="3WD-DD-8h2"/>
+                            <constraint firstItem="4mA-JZ-YY5" firstAttribute="centerX" secondItem="V71-h9-jej" secondAttribute="centerX" id="V6s-RG-Llz"/>
+                            <constraint firstItem="FCc-go-7f1" firstAttribute="top" secondItem="mlN-5w-2th" secondAttribute="top" constant="50" id="cr1-63-GNe"/>
+                            <constraint firstItem="FCc-go-7f1" firstAttribute="centerX" secondItem="V71-h9-jej" secondAttribute="centerX" id="ptd-57-UgH"/>
+                            <constraint firstItem="jYk-Z4-gYv" firstAttribute="top" secondItem="FCc-go-7f1" secondAttribute="bottom" constant="30" id="sTg-ZM-ZsX"/>
+                            <constraint firstItem="jYk-Z4-gYv" firstAttribute="leading" secondItem="mlN-5w-2th" secondAttribute="leading" constant="50" id="uiz-Kz-hXN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mlN-5w-2th"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Phone Verification" id="mjU-iD-Qea"/>
+                    <connections>
+                        <outlet property="codeTextField" destination="jYk-Z4-gYv" id="vtL-uh-vfz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="To3-2p-6Uc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2031" y="-750"/>
+        </scene>
         <!--Filters-->
         <scene sceneID="wCi-Os-lcy">
             <objects>
@@ -379,7 +437,7 @@
             </objects>
             <point key="canvasLocation" x="1020" y="945"/>
         </scene>
-        <!--Doughnate-->
+        <!--Login-->
         <scene sceneID="JjX-St-k5E">
             <objects>
                 <viewController id="fic-pZ-fKH" customClass="LoginViewController" customModule="Doughnate" customModuleProvider="target" sceneMemberID="viewController">
@@ -459,19 +517,20 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NBe-cY-hLv"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Doughnate" id="Qb8-ct-rHQ"/>
+                    <navigationItem key="navigationItem" title="Login" id="Qb8-ct-rHQ"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="activityIndicator" destination="hXs-l0-VbS" id="WY9-Wx-JV0"/>
                         <outlet property="emailTextField" destination="Phw-c2-H3A" id="4Cm-BC-wCt"/>
                         <outlet property="passwordTextField" destination="cHJ-ME-oT6" id="j3G-Ef-JMU"/>
+                        <segue destination="Toc-zk-TfQ" kind="show" identifier="showSMSSegue" id="aK6-NR-kzi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UN4-uQ-QVV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="594" y="-748"/>
         </scene>
-        <!--Doughnate-->
+        <!--Sign Up-->
         <scene sceneID="IAq-Ip-7bN">
             <objects>
                 <viewController id="mtW-4V-5md" customClass="SignUpViewController" customModule="Doughnate" customModuleProvider="target" sceneMemberID="viewController">
@@ -564,7 +623,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uJf-cg-f36"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Doughnate" id="3RN-xZ-Ql2"/>
+                    <navigationItem key="navigationItem" title="Sign Up" id="3RN-xZ-Ql2"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="activityIndicator" destination="lEP-xO-4k7" id="NOC-T8-SJ3"/>
@@ -575,7 +634,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P6p-B6-wse" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1398" y="-748"/>
+            <point key="canvasLocation" x="1311" y="-749"/>
         </scene>
         <!--Profile-->
         <scene sceneID="y8c-hb-yS2">
@@ -802,7 +861,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="BG9-W8-25E"/>
         <segue reference="tEw-Vt-RWK"/>
     </inferredMetricsTieBreakers>
 </document>

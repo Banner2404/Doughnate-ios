@@ -30,7 +30,12 @@ class LoginViewController: UIViewController {
             switch response {
             case .failure(let error):
                 print(error)
-                self.showErrorAlert(with: "Incorrect credentials")
+                switch error {
+                case .smsVerificationRequired:
+                    self.performSegue(withIdentifier: "showSMSSegue", sender: self)
+                default:
+                    self.showErrorAlert(with: "Incorrect credentials")
+                }
             case .success(let token):
                 UserManager.shared.authenticate(with: User(firstName: "hello", lastName: "World", email: email),
                                                 token: token)
