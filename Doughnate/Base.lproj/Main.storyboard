@@ -202,11 +202,16 @@
                                     <action selector="submitButtonTap:" destination="Toc-zk-TfQ" eventType="touchUpInside" id="BFz-rm-AmR"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="VHL-6F-rKi">
+                                <rect key="frame" x="77.5" y="260" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="mlN-5w-2th" firstAttribute="trailing" secondItem="jYk-Z4-gYv" secondAttribute="trailing" constant="50" id="1KD-2T-F0q"/>
+                            <constraint firstItem="4mA-JZ-YY5" firstAttribute="leading" secondItem="VHL-6F-rKi" secondAttribute="trailing" constant="15" id="1Xc-JB-X6D"/>
                             <constraint firstItem="4mA-JZ-YY5" firstAttribute="top" secondItem="jYk-Z4-gYv" secondAttribute="bottom" constant="50" id="3WD-DD-8h2"/>
+                            <constraint firstItem="VHL-6F-rKi" firstAttribute="centerY" secondItem="4mA-JZ-YY5" secondAttribute="centerY" id="HF0-er-5oz"/>
                             <constraint firstItem="4mA-JZ-YY5" firstAttribute="centerX" secondItem="V71-h9-jej" secondAttribute="centerX" id="V6s-RG-Llz"/>
                             <constraint firstItem="FCc-go-7f1" firstAttribute="top" secondItem="mlN-5w-2th" secondAttribute="top" constant="50" id="cr1-63-GNe"/>
                             <constraint firstItem="FCc-go-7f1" firstAttribute="centerX" secondItem="V71-h9-jej" secondAttribute="centerX" id="ptd-57-UgH"/>
@@ -217,6 +222,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Phone Verification" id="mjU-iD-Qea"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="VHL-6F-rKi" id="nen-xS-TGE"/>
                         <outlet property="codeTextField" destination="jYk-Z4-gYv" id="vtL-uh-vfz"/>
                     </connections>
                 </viewController>

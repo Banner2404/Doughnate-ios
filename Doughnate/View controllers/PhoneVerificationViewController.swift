@@ -10,11 +10,14 @@ import UIKit
 
 class PhoneVerificationViewController: UIViewController {
 
-    @IBOutlet weak var codeTextField: UITextField!
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet private weak var codeTextField: UITextField!
     
     @IBAction private func submitButtonTap(_ sender: Any) {
         let code = codeTextField.text ?? ""
+        activityIndicator.startAnimating()
         ApiManager.shared.loginSMS(code: code) { response in
+            self.activityIndicator.stopAnimating()
             switch response {
             case .failure(let error):
                 print(error)
