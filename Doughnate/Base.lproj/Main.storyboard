@@ -436,7 +436,7 @@
                                     <segue destination="mtW-4V-5md" kind="custom" customClass="ReplaceLastSegue" customModule="Doughnate" customModuleProvider="target" id="BG9-W8-25E"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="hXs-l0-VbS">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="hXs-l0-VbS">
                                 <rect key="frame" x="77.5" y="279" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
@@ -496,6 +496,9 @@
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="signUpButtonTap:" destination="mtW-4V-5md" eventType="touchUpInside" id="80G-8B-MnG"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3eo-zS-4sb">
                                 <rect key="frame" x="50" y="134" width="275" height="30"/>
@@ -513,7 +516,7 @@
                                     <color key="titleColor" red="0.88235294119999996" green="0.20784313730000001" blue="0.57254901960000004" alpha="1" colorSpace="deviceRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="fic-pZ-fKH" kind="custom" customClass="ReplaceLastSegue" customModule="Doughnate" customModuleProvider="target" id="tEw-Vt-RWK"/>
+                                    <segue destination="fic-pZ-fKH" kind="custom" identifier="showLoginSegue" customClass="ReplaceLastSegue" customModule="Doughnate" customModuleProvider="target" id="tEw-Vt-RWK"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QdA-co-9NK">
@@ -534,10 +537,14 @@
                                     <outlet property="delegate" destination="mtW-4V-5md" id="NRY-6E-NiE"/>
                                 </connections>
                             </textField>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="lEP-xO-4k7">
+                                <rect key="frame" x="77.5" y="319" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="3eo-zS-4sb" firstAttribute="top" secondItem="uJf-cg-f36" secondAttribute="top" constant="70" id="3DN-xA-5QI"/>
+                            <constraint firstItem="vri-tg-Ojm" firstAttribute="leading" secondItem="lEP-xO-4k7" secondAttribute="trailing" constant="15" id="4gD-Th-zVT"/>
                             <constraint firstItem="gQg-Yt-oD3" firstAttribute="centerX" secondItem="N9q-Fv-fo9" secondAttribute="centerX" id="4yH-wi-ZRD"/>
                             <constraint firstItem="gQg-Yt-oD3" firstAttribute="top" secondItem="TRg-bE-H7q" secondAttribute="bottom" constant="10" id="8F7-dE-scd"/>
                             <constraint firstItem="3eo-zS-4sb" firstAttribute="centerX" secondItem="N9q-Fv-fo9" secondAttribute="centerX" id="AFf-Ff-zsu"/>
@@ -546,6 +553,7 @@
                             <constraint firstItem="uJf-cg-f36" firstAttribute="trailing" secondItem="3eo-zS-4sb" secondAttribute="trailing" constant="50" id="Kjy-bz-fpi"/>
                             <constraint firstItem="wv9-6f-uGP" firstAttribute="leading" secondItem="3eo-zS-4sb" secondAttribute="leading" id="LWH-T9-kBQ"/>
                             <constraint firstItem="QdA-co-9NK" firstAttribute="top" secondItem="3eo-zS-4sb" secondAttribute="bottom" constant="20" id="Myz-m1-r7O"/>
+                            <constraint firstItem="lEP-xO-4k7" firstAttribute="centerY" secondItem="vri-tg-Ojm" secondAttribute="centerY" id="ST3-dM-Dhj"/>
                             <constraint firstItem="TRg-bE-H7q" firstAttribute="centerX" secondItem="N9q-Fv-fo9" secondAttribute="centerX" id="dNa-gT-mzt"/>
                             <constraint firstItem="TRg-bE-H7q" firstAttribute="top" secondItem="vri-tg-Ojm" secondAttribute="bottom" constant="50" id="gbj-Hw-Lhd"/>
                             <constraint firstItem="wv9-6f-uGP" firstAttribute="top" secondItem="QdA-co-9NK" secondAttribute="bottom" constant="20" id="lTT-as-0oB"/>
@@ -559,6 +567,7 @@
                     <navigationItem key="navigationItem" title="Doughnate" id="3RN-xZ-Ql2"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="lEP-xO-4k7" id="NOC-T8-SJ3"/>
                         <outlet property="emailTextField" destination="3eo-zS-4sb" id="Tqa-n1-fIZ"/>
                         <outlet property="passwordTextField" destination="QdA-co-9NK" id="PyM-YC-PD5"/>
                         <outlet property="repeatPasswordTextField" destination="wv9-6f-uGP" id="ENe-gr-tv8"/>
@@ -793,6 +802,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="BG9-W8-25E"/>
         <segue reference="tEw-Vt-RWK"/>
     </inferredMetricsTieBreakers>
 </document>

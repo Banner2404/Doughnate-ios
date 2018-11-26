@@ -8,9 +8,16 @@
 
 import Foundation
 
-enum Response<T: Decodable, E: Error> {
+enum Response<T, E: Error> {
     case success(T)
     case failure(E)
 }
 
-typealias ResponseCompletion<T: Decodable, E: Error> = (Response<T, E>) -> Void
+enum SimpleResponse<E: Error> {
+    case success
+    case failure(E)
+}
+
+
+typealias ResponseCompletion<T, E: Error> = (Response<T, E>) -> Void
+typealias SimpleResponseCompletion<E: Error> = (SimpleResponse<E>) -> Void

@@ -20,4 +20,9 @@ class ApiManager {
         networkManager.perform(request, responseType: Token.self, completion: completion)
     }
     
+    func signup(email: String, password: String, completion: @escaping SimpleResponseCompletion<NetworkError>) {
+        let request = Requests.signup(email: email, password: password)
+        networkManager.perform(request, completion: completion)
+    }
+    
 }

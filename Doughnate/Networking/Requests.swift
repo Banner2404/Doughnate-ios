@@ -18,4 +18,13 @@ class Requests {
                           path: ["login/"],
                           body: body)!
     }
+    
+    static func signup(email: String, password: String) -> URLRequest {
+        let body = ["email": email,
+                    "password": password]
+        return URLRequest(method: .post,
+                          domain: ApiUrl.host,
+                          path: ["signup/"],
+                          body: body)!
+    }
 }

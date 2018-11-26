@@ -14,6 +14,32 @@ class NetworkManager {
     private init() {}
     
     func perform<T: Decodable>(_ request: URLRequest, responseType: T.Type, completion: @escaping ResponseCompletion<T, NetworkError>) {
+        perform(dataRequest: request) { response in
+            switch response {
+            case .failure(let error):
+                completion(.failure(error))
+            case .success(let data):
+                if let object = try? JSONDecoder().decode(T.self, from: data) {
+                    completion(.success(object))
+                } else {
+                    completion(.failure(.unableToParse(data)))
+                }
+            }
+        }
+    }
+    
+    func perform(_ request: URLRequest, completion: @escaping SimpleResponseCompletion<NetworkError>) {
+        perform(dataRequest: request) { response in
+            switch response {
+            case .failure(let error):
+                completion(.failure(error))
+            case .success(_):
+                completion(.success)
+            }
+        }
+    }
+    
+    private func perform(dataRequest request: URLRequest, completion: @escaping ResponseCompletion<Data, NetworkError>) {
         print(request.httpMethod ?? "", request.url?.absoluteString ?? "")
         URLSession.shared.dataTask(with: request) { data, response, error in
             DispatchQueue.main.async {
@@ -31,12 +57,8 @@ class NetworkManager {
                     completion(.failure(.statusCode(httpResponse.statusCode)))
                     return
                 }
-                guard let responseObject = try? JSONDecoder().decode(responseType, from: data) else {
-                    completion(.failure(.unableToParse(data)))
-                    return
-                }
-                completion(.success(responseObject))
+                completion(.success(data))
             }
-            }.resume()
+        }.resume()
     }
 }
