@@ -11,7 +11,12 @@ import Stripe
 
 class CreditCardsViewController: UIViewController {
 
-    private let creditCards: [CreditCard] = [CreditCard(lastFour: "1234", brand: .visa), CreditCard(lastFour: "4242", brand: .mastercard)]
+    private var creditCards: [CreditCard] = []
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        creditCards = UserManager.shared.user?.creditCards ?? []
+    }
 
     @IBAction private func addButtonTap(_ sender: Any) {
         let vc = STPAddCardViewController()

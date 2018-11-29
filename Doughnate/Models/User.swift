@@ -12,10 +12,12 @@ struct User: Codable {
     let firstName: String
     let lastName: String
     let email: String
+    let creditCards: [CreditCard]
     
-    init(firstName: String, lastName: String, email: String) {
+    init(firstName: String, lastName: String, email: String, creditCards: [CreditCard]) {
         self.firstName = firstName
         self.lastName = lastName
         self.email = email
+        self.creditCards = creditCards
     }
 }

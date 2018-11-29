@@ -23,7 +23,8 @@ class PhoneVerificationViewController: UIViewController {
                 print(error)
                 self.showErrorAlert(with: "Incorrect code")
             case .success(let token):
-                UserManager.shared.authenticate(with: User(firstName: "123", lastName: "123", email: "etew"), token: token)
+                let cards = [CreditCard(lastFour: "1234", brand: .visa), CreditCard(lastFour: "4242", brand: .mastercard)]
+                UserManager.shared.authenticate(with: User(firstName: "123", lastName: "123", email: "etew", creditCards: cards), token: token)
                 self.dismiss(animated: true, completion: nil)
             }
         }

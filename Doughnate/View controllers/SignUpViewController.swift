@@ -34,6 +34,7 @@ class SignUpViewController: UIViewController {
             self.activityIndicator.stopAnimating()
             switch response {
             case .failure(let error):
+                print(error)
                 self.showErrorAlert(with: "Unable to sign up")
             case .success:
                 self.showErrorAlert(with: "Please confirm your email address") {
