@@ -831,6 +831,35 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ams-zc-Mq7">
+                                        <rect key="frame" x="0.0" y="211" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ams-zc-Mq7" id="4s3-G7-cod">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Two Factor Authentication" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9h0-5e-TxB">
+                                                    <rect key="frame" x="15" y="11.5" width="281" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F9u-HB-lDu">
+                                                    <rect key="frame" x="311" y="6.5" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="smsSwitchChanged:" destination="Vg6-y8-WAZ" eventType="valueChanged" id="v3N-DI-KkW"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="9h0-5e-TxB" firstAttribute="centerY" secondItem="4s3-G7-cod" secondAttribute="centerY" id="1oC-77-z75"/>
+                                                <constraint firstItem="9h0-5e-TxB" firstAttribute="leading" secondItem="4s3-G7-cod" secondAttribute="leading" constant="15" id="W7R-2x-QOa"/>
+                                                <constraint firstAttribute="trailing" secondItem="F9u-HB-lDu" secondAttribute="trailing" constant="15" id="Zey-5t-kbg"/>
+                                                <constraint firstItem="F9u-HB-lDu" firstAttribute="leading" secondItem="9h0-5e-TxB" secondAttribute="trailing" constant="15" id="lUK-Ny-1LA"/>
+                                                <constraint firstItem="F9u-HB-lDu" firstAttribute="centerY" secondItem="4s3-G7-cod" secondAttribute="centerY" id="vIh-XZ-MqI"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -844,11 +873,84 @@
                         <outlet property="emailLabel" destination="H99-6s-sSq" id="kBS-MN-Ak8"/>
                         <outlet property="firstNameTextField" destination="kbi-e7-cpG" id="I90-pC-zQb"/>
                         <outlet property="lastNameTextField" destination="sBj-sX-EqM" id="3Da-5F-NZs"/>
+                        <outlet property="smsSwitch" destination="F9u-HB-lDu" id="j1t-KL-FwL"/>
+                        <segue destination="1p9-w5-q3l" kind="show" identifier="smsSetupSegue" id="FtR-kt-9ZN"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wfa-qY-4Ft" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2780" y="824"/>
+        </scene>
+        <!--Two Factor Authentication-->
+        <scene sceneID="JMg-So-9xc">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="1p9-w5-q3l" customClass="SMSSetupViewController" customModule="Doughnate" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2s5-pf-sGo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qrm-tg-KSz">
+                                <rect key="frame" x="100.5" y="180" width="224.5" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter your phone number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K0I-VD-4BR">
+                                <rect key="frame" x="63" y="109" width="249" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gyN-We-3Yk">
+                                <rect key="frame" x="112.5" y="240" width="150" height="50"/>
+                                <color key="backgroundColor" red="0.88235294119999996" green="0.20784313730000001" blue="0.57254901960000004" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="EGe-Tx-bEb"/>
+                                    <constraint firstAttribute="width" constant="150" id="HwR-Bg-yZW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Enable">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="enableButtonTap:" destination="1p9-w5-q3l" eventType="touchUpInside" id="1bk-O3-L2C"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="2Is-eU-nkf">
+                                <rect key="frame" x="77.5" y="255" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+375" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VPh-Je-j9i">
+                                <rect key="frame" x="50" y="184.5" width="40.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="K0I-VD-4BR" firstAttribute="top" secondItem="ngb-gt-Xmy" secondAttribute="top" constant="45" id="8jK-FV-4lM"/>
+                            <constraint firstItem="VPh-Je-j9i" firstAttribute="leading" secondItem="ngb-gt-Xmy" secondAttribute="leading" constant="50" id="Myj-77-Xoj"/>
+                            <constraint firstItem="K0I-VD-4BR" firstAttribute="centerX" secondItem="2s5-pf-sGo" secondAttribute="centerX" id="TWA-O0-LBh"/>
+                            <constraint firstItem="gyN-We-3Yk" firstAttribute="top" secondItem="Qrm-tg-KSz" secondAttribute="bottom" constant="30" id="Toi-kN-VHH"/>
+                            <constraint firstItem="2Is-eU-nkf" firstAttribute="centerY" secondItem="gyN-We-3Yk" secondAttribute="centerY" id="U0T-1k-qyV"/>
+                            <constraint firstItem="Qrm-tg-KSz" firstAttribute="leading" secondItem="VPh-Je-j9i" secondAttribute="trailing" constant="10" id="U57-27-WTA"/>
+                            <constraint firstItem="gyN-We-3Yk" firstAttribute="leading" secondItem="2Is-eU-nkf" secondAttribute="trailing" constant="15" id="eJy-7s-Pt6"/>
+                            <constraint firstItem="gyN-We-3Yk" firstAttribute="centerX" secondItem="2s5-pf-sGo" secondAttribute="centerX" id="idt-JG-4FM"/>
+                            <constraint firstItem="Qrm-tg-KSz" firstAttribute="top" secondItem="K0I-VD-4BR" secondAttribute="bottom" constant="50" id="jt3-VW-Qj7"/>
+                            <constraint firstItem="ngb-gt-Xmy" firstAttribute="trailing" secondItem="Qrm-tg-KSz" secondAttribute="trailing" constant="50" id="ozb-Hh-wmr"/>
+                            <constraint firstItem="VPh-Je-j9i" firstAttribute="centerY" secondItem="Qrm-tg-KSz" secondAttribute="centerY" id="rWt-GD-fUz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ngb-gt-Xmy"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Two Factor Authentication" id="Yuu-s6-huz"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="2Is-eU-nkf" id="g5s-80-Cpo"/>
+                        <outlet property="phoneNumberTextField" destination="Qrm-tg-KSz" id="nI0-D8-0WN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kBX-L2-cJt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3570" y="824"/>
         </scene>
         <!--Credit Cards-->
         <scene sceneID="Wem-FK-fvU">

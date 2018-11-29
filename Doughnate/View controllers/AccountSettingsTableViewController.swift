@@ -13,6 +13,7 @@ class AccountSettingsTableViewController: UITableViewController {
     @IBOutlet private weak var firstNameTextField: UITextField!
     @IBOutlet private weak var lastNameTextField: UITextField!
     @IBOutlet private weak var emailLabel: UILabel!
+    @IBOutlet private weak var smsSwitch: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,13 @@ class AccountSettingsTableViewController: UITableViewController {
         firstNameTextField.text = user.firstName
         lastNameTextField.text = user.lastName
         emailLabel.text = user.email
+        smsSwitch.isOn = user.isTwoFactorAuthenticationEnabled
+    }
+    
+    @IBAction func smsSwitchChanged(_ sender: Any) {
+        if smsSwitch.isOn {
+            performSegue(withIdentifier: "smsSetupSegue", sender: self)
+        }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
