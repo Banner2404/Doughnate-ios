@@ -17,6 +17,7 @@
 		D11B25A421A2DF6B00ADC7F9 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11B25A321A2DF6B00ADC7F9 /* ProfileTableViewController.swift */; };
 		D11B25A621A2E30100ADC7F9 /* AccountSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11B25A521A2E30100ADC7F9 /* AccountSettingsTableViewController.swift */; };
 		D11B25A821A2E33C00ADC7F9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11B25A721A2E33C00ADC7F9 /* User.swift */; };
+		D1AB923F21B0678C00D95752 /* CreditCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1AB923E21B0678C00D95752 /* CreditCardsViewController.swift */; };
 		D1ADA85A21ABF896006B2CCD /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ADA85921ABF896006B2CCD /* NetworkManager.swift */; };
 		D1ADA85C21ABF909006B2CCD /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ADA85B21ABF909006B2CCD /* NetworkError.swift */; };
 		D1ADA85E21ABF92C006B2CCD /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ADA85D21ABF92C006B2CCD /* Response.swift */; };
@@ -58,6 +59,7 @@
 		D11B25A321A2DF6B00ADC7F9 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		D11B25A521A2E30100ADC7F9 /* AccountSettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsTableViewController.swift; sourceTree = "<group>"; };
 		D11B25A721A2E33C00ADC7F9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D1AB923E21B0678C00D95752 /* CreditCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardsViewController.swift; sourceTree = "<group>"; };
 		D1ADA85921ABF896006B2CCD /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		D1ADA85B21ABF909006B2CCD /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		D1ADA85D21ABF92C006B2CCD /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				D11B259621A2C52D00ADC7F9 /* LoginViewController.swift */,
 				D1ADA86C21AC0BBA006B2CCD /* PhoneVerificationViewController.swift */,
 				D11B259821A2C66600ADC7F9 /* SignUpViewController.swift */,
+				D1AB923E21B0678C00D95752 /* CreditCardsViewController.swift */,
 			);
 			path = "View controllers";
 			sourceTree = "<group>";
@@ -337,10 +340,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Doughnate/Pods-Doughnate-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Stripe/Stripe.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stripe.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,6 +361,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1ADA85A21ABF896006B2CCD /* NetworkManager.swift in Sources */,
+				D1AB923F21B0678C00D95752 /* CreditCardsViewController.swift in Sources */,
 				D11B25A621A2E30100ADC7F9 /* AccountSettingsTableViewController.swift in Sources */,
 				D11B259721A2C52D00ADC7F9 /* LoginViewController.swift in Sources */,
 				D1FC0D9D2177247400A058F1 /* ProjectListViewController.swift in Sources */,

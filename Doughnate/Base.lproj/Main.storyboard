@@ -689,6 +689,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="cWl-nt-QYn" kind="show" id="i9y-L3-O9I"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="NVp-rt-w6i" style="IBUITableViewCellStyleDefault" id="48j-7R-th6">
                                         <rect key="frame" x="0.0" y="123" width="375" height="44"/>
@@ -845,7 +848,41 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wfa-qY-4Ft" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2766" y="945"/>
+            <point key="canvasLocation" x="2780" y="824"/>
+        </scene>
+        <!--Credit Cards-->
+        <scene sceneID="Wem-FK-fvU">
+            <objects>
+                <viewController id="cWl-nt-QYn" customClass="CreditCardsViewController" customModule="Doughnate" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vdv-ud-j9e">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="l0g-bF-QKr">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="l0g-bF-QKr" firstAttribute="top" secondItem="wr7-7k-dzO" secondAttribute="top" id="Qxj-ii-GFf"/>
+                            <constraint firstItem="l0g-bF-QKr" firstAttribute="leading" secondItem="wr7-7k-dzO" secondAttribute="leading" id="TRM-A3-xv5"/>
+                            <constraint firstAttribute="trailing" secondItem="l0g-bF-QKr" secondAttribute="trailing" id="bpz-2u-75n"/>
+                            <constraint firstItem="wr7-7k-dzO" firstAttribute="bottom" secondItem="l0g-bF-QKr" secondAttribute="bottom" id="lvx-IM-kJH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wr7-7k-dzO"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Credit Cards" largeTitleDisplayMode="never" id="xk2-iw-ZTM">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="hKw-A7-Bj2">
+                            <connections>
+                                <action selector="addButtonTap:" destination="cWl-nt-QYn" id="KrJ-8a-gCO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pjn-HA-H2f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2780" y="1522"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="D4S-4z-3lM">

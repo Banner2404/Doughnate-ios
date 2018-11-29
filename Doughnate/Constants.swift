@@ -13,3 +13,7 @@ struct ApiUrl {
     static let host = "https://www.doughnate.online"
     //static let host = "http://doughnate.stasdeep.com"
 }
+
+struct ApiKey {
+    static let stripe = "pk_test_oBQWlOHPKBdQrm4qY6rEXxbP"
+}
