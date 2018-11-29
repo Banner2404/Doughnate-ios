@@ -18,6 +18,8 @@
 		D11B25A621A2E30100ADC7F9 /* AccountSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11B25A521A2E30100ADC7F9 /* AccountSettingsTableViewController.swift */; };
 		D11B25A821A2E33C00ADC7F9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11B25A721A2E33C00ADC7F9 /* User.swift */; };
 		D1AB923F21B0678C00D95752 /* CreditCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1AB923E21B0678C00D95752 /* CreditCardsViewController.swift */; };
+		D1AB924121B069F400D95752 /* CreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1AB924021B069F400D95752 /* CreditCard.swift */; };
+		D1AB924321B06C6F00D95752 /* CreditCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1AB924221B06C6F00D95752 /* CreditCardTableViewCell.swift */; };
 		D1ADA85A21ABF896006B2CCD /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ADA85921ABF896006B2CCD /* NetworkManager.swift */; };
 		D1ADA85C21ABF909006B2CCD /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ADA85B21ABF909006B2CCD /* NetworkError.swift */; };
 		D1ADA85E21ABF92C006B2CCD /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ADA85D21ABF92C006B2CCD /* Response.swift */; };
@@ -60,6 +62,8 @@
 		D11B25A521A2E30100ADC7F9 /* AccountSettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsTableViewController.swift; sourceTree = "<group>"; };
 		D11B25A721A2E33C00ADC7F9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D1AB923E21B0678C00D95752 /* CreditCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardsViewController.swift; sourceTree = "<group>"; };
+		D1AB924021B069F400D95752 /* CreditCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCard.swift; sourceTree = "<group>"; };
+		D1AB924221B06C6F00D95752 /* CreditCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardTableViewCell.swift; sourceTree = "<group>"; };
 		D1ADA85921ABF896006B2CCD /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		D1ADA85B21ABF909006B2CCD /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		D1ADA85D21ABF92C006B2CCD /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
@@ -202,6 +206,7 @@
 				D1FC0DC521775F6700A058F1 /* Filter.swift */,
 				D11B259F21A2DC4F00ADC7F9 /* Token.swift */,
 				D11B25A721A2E33C00ADC7F9 /* User.swift */,
+				D1AB924021B069F400D95752 /* CreditCard.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -220,6 +225,7 @@
 			children = (
 				D1FC0DB221772B1B00A058F1 /* ProjectTableViewCell.swift */,
 				D1FC0DC321775D0500A058F1 /* FilterTableViewCell.swift */,
+				D1AB924221B06C6F00D95752 /* CreditCardTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -382,11 +388,13 @@
 				D1ADA86D21AC0BBA006B2CCD /* PhoneVerificationViewController.swift in Sources */,
 				D1ADA86221ABF997006B2CCD /* URLRequest.swift in Sources */,
 				D11B25A021A2DC4F00ADC7F9 /* Token.swift in Sources */,
+				D1AB924321B06C6F00D95752 /* CreditCardTableViewCell.swift in Sources */,
 				D11B25A221A2DE4400ADC7F9 /* TabBarController.swift in Sources */,
 				D1FC0DB821772B9100A058F1 /* UITableViewCell.swift in Sources */,
 				D1FC0DC92177722300A058F1 /* ReplaceLastSegue.swift in Sources */,
 				D11B259921A2C66600ADC7F9 /* SignUpViewController.swift in Sources */,
 				D1FC0DBC21772DC200A058F1 /* NumberFormatter.swift in Sources */,
+				D1AB924121B069F400D95752 /* CreditCard.swift in Sources */,
 				D1FC0DBE2177303600A058F1 /* ProjectDetailsViewController.swift in Sources */,
 				D1FC0DC421775D0500A058F1 /* FilterTableViewCell.swift in Sources */,
 				D1FC0DAF21772AAA00A058F1 /* Project.swift in Sources */,

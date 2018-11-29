@@ -858,9 +858,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="l0g-bF-QKr">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="60" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="l0g-bF-QKr">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CreditCardTableViewCell" id="akS-lp-SQd" customClass="CreditCardTableViewCell" customModule="Doughnate" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="akS-lp-SQd" id="ccz-j6-nOu">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vUS-Nh-ToT">
+                                                    <rect key="frame" x="15" y="8" width="69" height="43.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="vUS-Nh-ToT" secondAttribute="height" multiplier="57:36" id="gRI-2n-VrS"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="asU-2b-TBz">
+                                                    <rect key="frame" x="99" y="19.5" width="261" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="vUS-Nh-ToT" secondAttribute="bottom" constant="8" id="4p2-eH-1xY"/>
+                                                <constraint firstItem="asU-2b-TBz" firstAttribute="centerY" secondItem="ccz-j6-nOu" secondAttribute="centerY" id="6yY-N8-GpZ"/>
+                                                <constraint firstAttribute="trailing" secondItem="asU-2b-TBz" secondAttribute="trailing" constant="15" id="FtC-zM-YYo"/>
+                                                <constraint firstItem="vUS-Nh-ToT" firstAttribute="top" secondItem="ccz-j6-nOu" secondAttribute="top" constant="8" id="V4J-HG-iye"/>
+                                                <constraint firstItem="vUS-Nh-ToT" firstAttribute="leading" secondItem="ccz-j6-nOu" secondAttribute="leading" constant="15" id="a33-th-c8e"/>
+                                                <constraint firstItem="asU-2b-TBz" firstAttribute="leading" secondItem="vUS-Nh-ToT" secondAttribute="trailing" constant="15" id="tIm-zb-XU0"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cardImageView" destination="vUS-Nh-ToT" id="nGN-MZ-Xbc"/>
+                                            <outlet property="cardLabel" destination="asU-2b-TBz" id="oSL-Bb-eyV"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="cWl-nt-QYn" id="wGW-9p-fTP"/>
+                                    <outlet property="delegate" destination="cWl-nt-QYn" id="U3k-uB-6cx"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
