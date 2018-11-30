@@ -42,4 +42,9 @@ class ApiManager {
         networkManager.perform(request, completion: completion)
     }
     
+    func forgotPassword(email: String, completion: @escaping SimpleResponseCompletion<NetworkError>) {
+        let request = Requests.forgotPassword(email: email)
+        networkManager.perform(request, completion: completion)
+    }
+    
 }

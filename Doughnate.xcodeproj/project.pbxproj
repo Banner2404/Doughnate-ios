@@ -30,6 +30,7 @@
 		D1ADA86721ABFA7F006B2CCD /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ADA86621ABFA7F006B2CCD /* Requests.swift */; };
 		D1ADA86B21ABFF35006B2CCD /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ADA86A21ABFF35006B2CCD /* UIViewController.swift */; };
 		D1ADA86D21AC0BBA006B2CCD /* PhoneVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ADA86C21AC0BBA006B2CCD /* PhoneVerificationViewController.swift */; };
+		D1DE4F2021B120EE00295C54 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DE4F1F21B120EE00295C54 /* ForgotPasswordViewController.swift */; };
 		D1FC0D9B2177247400A058F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FC0D9A2177247400A058F1 /* AppDelegate.swift */; };
 		D1FC0D9D2177247400A058F1 /* ProjectListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FC0D9C2177247400A058F1 /* ProjectListViewController.swift */; };
 		D1FC0DA02177247400A058F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1FC0D9E2177247400A058F1 /* Main.storyboard */; };
@@ -75,6 +76,7 @@
 		D1ADA86621ABFA7F006B2CCD /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
 		D1ADA86A21ABFF35006B2CCD /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		D1ADA86C21AC0BBA006B2CCD /* PhoneVerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerificationViewController.swift; sourceTree = "<group>"; };
+		D1DE4F1F21B120EE00295C54 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		D1FC0D972177247400A058F1 /* Doughnate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Doughnate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1FC0D9A2177247400A058F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1FC0D9C2177247400A058F1 /* ProjectListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectListViewController.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				D11B25A521A2E30100ADC7F9 /* AccountSettingsTableViewController.swift */,
 				D1AB924421B075FD00D95752 /* SMSSetupViewController.swift */,
 				D11B259621A2C52D00ADC7F9 /* LoginViewController.swift */,
+				D1DE4F1F21B120EE00295C54 /* ForgotPasswordViewController.swift */,
 				D1ADA86C21AC0BBA006B2CCD /* PhoneVerificationViewController.swift */,
 				D11B259821A2C66600ADC7F9 /* SignUpViewController.swift */,
 				D1AB923E21B0678C00D95752 /* CreditCardsViewController.swift */,
@@ -401,6 +404,7 @@
 				D1AB924521B075FD00D95752 /* SMSSetupViewController.swift in Sources */,
 				D1FC0DBE2177303600A058F1 /* ProjectDetailsViewController.swift in Sources */,
 				D1FC0DC421775D0500A058F1 /* FilterTableViewCell.swift in Sources */,
+				D1DE4F2021B120EE00295C54 /* ForgotPasswordViewController.swift in Sources */,
 				D1FC0DAF21772AAA00A058F1 /* Project.swift in Sources */,
 				D1FC0DB321772B1B00A058F1 /* ProjectTableViewCell.swift in Sources */,
 				D1ADA85E21ABF92C006B2CCD /* Response.swift in Sources */,

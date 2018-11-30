@@ -35,4 +35,12 @@ class Requests {
                           path: ["signup/"],
                           body: body)!
     }
+    
+    static func forgotPassword(email: String) -> URLRequest {
+        let body = ["email": email]
+        return URLRequest(method: .post,
+                          domain: ApiUrl.host,
+                          path: ["forgot_password/"],
+                          body: body)!
+    }
 }
