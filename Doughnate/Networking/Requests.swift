@@ -43,4 +43,12 @@ class Requests {
                           path: ["forgot_password/"],
                           body: body)!
     }
+    
+    static func changePassword(old: String, new: String) -> URLRequest {
+        let body = ["old": old, "new": new]
+        return URLRequest(method: .post,
+                          domain: ApiUrl.host,
+                          path: ["change_password/"],
+                          body: body)!
+    }
 }

@@ -47,4 +47,9 @@ class ApiManager {
         networkManager.perform(request, completion: completion)
     }
     
+    func changePassword(old: String, new: String, completion: @escaping SimpleResponseCompletion<NetworkError>) {
+        let request = Requests.changePassword(old: old, new: new)
+        networkManager.perform(request, completion: completion)
+    }
+    
 }

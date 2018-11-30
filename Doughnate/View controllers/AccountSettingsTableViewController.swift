@@ -34,6 +34,10 @@ class AccountSettingsTableViewController: UITableViewController {
         }
     }
     
+    @IBAction func saveButtonTap(_ sender: Any) {
+        print("Save")
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }

@@ -385,6 +385,90 @@
             </objects>
             <point key="canvasLocation" x="2780" y="134"/>
         </scene>
+        <!--Change Password-->
+        <scene sceneID="tgf-eh-DJI">
+            <objects>
+                <viewController id="OOu-Nh-1IM" customClass="ChangePasswordViewController" customModule="Doughnate" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="k9q-I5-vHR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Current Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gDZ-CZ-i3P">
+                                <rect key="frame" x="20" y="104" width="335" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES" textContentType="password"/>
+                                <connections>
+                                    <outlet property="delegate" destination="OOu-Nh-1IM" id="zIL-HZ-MM9"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RRe-hf-9br">
+                                <rect key="frame" x="20" y="149" width="335" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES" textContentType="new-password"/>
+                                <connections>
+                                    <outlet property="delegate" destination="OOu-Nh-1IM" id="ECd-YT-PIm"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Repeat Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gKc-pa-2Yj">
+                                <rect key="frame" x="20" y="194" width="335" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="send" secureTextEntry="YES" textContentType="new-password"/>
+                                <connections>
+                                    <outlet property="delegate" destination="OOu-Nh-1IM" id="0d9-qt-5df"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wx6-R7-nnx">
+                                <rect key="frame" x="112.5" y="274" width="150" height="50"/>
+                                <color key="backgroundColor" red="0.88235294119999996" green="0.20784313730000001" blue="0.57254901960000004" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="7SZ-Md-NKP"/>
+                                    <constraint firstAttribute="width" constant="150" id="WfI-bK-3uJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Change">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeButtonTap:" destination="OOu-Nh-1IM" eventType="touchUpInside" id="nCQ-E9-8u8"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Zu0-ll-plq">
+                                <rect key="frame" x="77.5" y="289" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="RRe-hf-9br" firstAttribute="top" secondItem="gDZ-CZ-i3P" secondAttribute="bottom" constant="15" id="78q-tq-TM9"/>
+                            <constraint firstItem="RRe-hf-9br" firstAttribute="trailing" secondItem="gDZ-CZ-i3P" secondAttribute="trailing" id="7Py-Po-7fq"/>
+                            <constraint firstItem="gKc-pa-2Yj" firstAttribute="leading" secondItem="RRe-hf-9br" secondAttribute="leading" id="KN8-wT-ZTu"/>
+                            <constraint firstItem="Wx6-R7-nnx" firstAttribute="top" secondItem="gKc-pa-2Yj" secondAttribute="bottom" constant="50" id="Q8Z-QU-xmY"/>
+                            <constraint firstItem="hlL-g6-qEG" firstAttribute="trailing" secondItem="gDZ-CZ-i3P" secondAttribute="trailing" constant="20" id="QoW-Ix-mkz"/>
+                            <constraint firstItem="Wx6-R7-nnx" firstAttribute="centerX" secondItem="k9q-I5-vHR" secondAttribute="centerX" id="V8i-p3-B71"/>
+                            <constraint firstItem="gKc-pa-2Yj" firstAttribute="top" secondItem="RRe-hf-9br" secondAttribute="bottom" constant="15" id="bcb-w8-cL5"/>
+                            <constraint firstItem="Zu0-ll-plq" firstAttribute="centerY" secondItem="Wx6-R7-nnx" secondAttribute="centerY" id="ddy-M0-g5f"/>
+                            <constraint firstItem="gDZ-CZ-i3P" firstAttribute="top" secondItem="hlL-g6-qEG" secondAttribute="top" constant="40" id="gUM-FN-8Ja"/>
+                            <constraint firstItem="Wx6-R7-nnx" firstAttribute="leading" secondItem="Zu0-ll-plq" secondAttribute="trailing" constant="15" id="jc9-zK-ACW"/>
+                            <constraint firstItem="RRe-hf-9br" firstAttribute="leading" secondItem="gDZ-CZ-i3P" secondAttribute="leading" id="kV4-mZ-hRi"/>
+                            <constraint firstItem="gKc-pa-2Yj" firstAttribute="trailing" secondItem="RRe-hf-9br" secondAttribute="trailing" id="rPK-jL-tb0"/>
+                            <constraint firstItem="gDZ-CZ-i3P" firstAttribute="leading" secondItem="hlL-g6-qEG" secondAttribute="leading" constant="20" id="yln-gK-rIp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hlL-g6-qEG"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Change Password" id="XGY-Dz-4NR"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="Zu0-ll-plq" id="7KN-JZ-NzZ"/>
+                        <outlet property="currentPasswordTextField" destination="gDZ-CZ-i3P" id="xhS-2Q-T6m"/>
+                        <outlet property="newPasswordTextField" destination="RRe-hf-9br" id="6mX-0k-bRZ"/>
+                        <outlet property="repeatPasswordTextField" destination="gKc-pa-2Yj" id="qzA-b7-ywn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RpU-Wf-ceW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3606" y="528"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="xCY-XG-QEp">
             <objects>
@@ -873,15 +957,15 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="H99-6s-sSq" style="IBUITableViewCellStyleDefault" id="iUj-uG-2Pr">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="H99-6s-sSq" style="IBUITableViewCellStyleDefault" id="iUj-uG-2Pr">
                                         <rect key="frame" x="0.0" y="123" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iUj-uG-2Pr" id="h9o-mA-qUM">
-                                            <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="H99-6s-sSq">
-                                                    <rect key="frame" x="16" y="0.0" width="324" height="43.5"/>
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -906,6 +990,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="OOu-Nh-1IM" kind="show" id="IXt-Ha-jFh"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ams-zc-Mq7">
                                         <rect key="frame" x="0.0" y="211" width="375" height="44"/>
@@ -944,7 +1031,13 @@
                             <outlet property="delegate" destination="Vg6-y8-WAZ" id="L8N-pq-4VD"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Account Settings" largeTitleDisplayMode="never" id="bsq-zu-rm1"/>
+                    <navigationItem key="navigationItem" title="Account Settings" largeTitleDisplayMode="never" id="bsq-zu-rm1">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="NfF-25-BgL">
+                            <connections>
+                                <action selector="saveButtonTap:" destination="Vg6-y8-WAZ" id="7xO-Hp-JP9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="emailLabel" destination="H99-6s-sSq" id="kBS-MN-Ak8"/>
                         <outlet property="firstNameTextField" destination="kbi-e7-cpG" id="I90-pC-zQb"/>
