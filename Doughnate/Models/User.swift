@@ -9,13 +9,15 @@
 import Foundation
 
 struct User: Codable {
-    let firstName: String
-    let lastName: String
+    let id: String
+    var firstName: String
+    var lastName: String
     let email: String
     let isTwoFactorAuthenticationEnabled: Bool
     let creditCards: [CreditCard]
     
     init(firstName: String, lastName: String, email: String, creditCards: [CreditCard]) {
+        self.id = "12346"
         self.firstName = firstName
         self.lastName = lastName
         self.email = email

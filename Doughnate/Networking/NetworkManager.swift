@@ -41,6 +41,9 @@ class NetworkManager {
     
     private func perform(dataRequest request: URLRequest, completion: @escaping ResponseCompletion<Data, NetworkError>) {
         print(request.httpMethod ?? "", request.url?.absoluteString ?? "")
+        if let body = request.httpBody, let json = try? JSONSerialization.jsonObject(with: body, options: []) {
+            print("Body", json)
+        }
         URLSession.shared.dataTask(with: request) { data, response, error in
             DispatchQueue.main.async {
                 if let error = error {

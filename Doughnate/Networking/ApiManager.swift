@@ -52,4 +52,9 @@ class ApiManager {
         networkManager.perform(request, completion: completion)
     }
     
+    func update(user: User, token: String, completion: @escaping SimpleResponseCompletion<NetworkError>) {
+        let request = Requests.update(user, token: token)
+        networkManager.perform(request, completion: completion)
+    }
+    
 }

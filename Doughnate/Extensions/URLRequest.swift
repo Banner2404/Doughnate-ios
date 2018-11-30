@@ -10,7 +10,12 @@ import Foundation
 
 extension URLRequest {
     
-    init?(method: HTTPMethod, domain: String, path: [String] = [], query: [(key: String, value: String?)] = [], body: [String: Any]? = nil, headers: [(key: String, value: String)] = []) {
+    init?(method: HTTPMethod, domain: String, path: [String] = [], query: [(key: String, value: String?)] = [], body: Data, headers: [(key: String, value: String)] = [], token: String? = nil) {
+        guard  let json = (try? JSONSerialization.jsonObject(with: body, options: [])) as? [String: Any] else { return nil }
+        self.init(method: method, domain: domain, path: path, query: query, body: json, headers: headers, token: token)
+    }
+    
+    init?(method: HTTPMethod, domain: String, path: [String] = [], query: [(key: String, value: String?)] = [], body: [String: Any]? = nil, headers: [(key: String, value: String)] = [], token: String? = nil) {
         guard var url = URL(string: domain) else { return nil }
         path.forEach { url.appendPathComponent($0) }
         guard var components = URLComponents(url: url, resolvingAgainstBaseURL: false) else { return nil }
@@ -23,6 +28,9 @@ extension URLRequest {
             self.addValue("application/json", forHTTPHeaderField: "Content-Type")
         }
         self.addValue("application/json", forHTTPHeaderField: "Accept")
+        if let token = token {
+            self.addValue(token, forHTTPHeaderField: "Authorization")
+        }
         headers.forEach { self.addValue($1, forHTTPHeaderField: $0) }
     }
     

@@ -51,4 +51,13 @@ class Requests {
                           path: ["change_password/"],
                           body: body)!
     }
+    
+    static func update(_ user: User, token: String) -> URLRequest {
+        let body = try! JSONEncoder().encode(user)
+        return URLRequest(method: .put,
+                          domain: ApiUrl.host,
+                          path: ["users", "\(user.id)/"],
+                          body: body,
+                          token: token)!
+    }
 }

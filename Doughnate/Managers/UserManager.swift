@@ -42,4 +42,9 @@ class UserManager {
         self.token = keychainManager.loadToken()
         self.user = keychainManager.loadUser()
     }
+    
+    func update(_ user: User) {
+        self.user = user
+        keychainManager.save(user)
+    }
 }
