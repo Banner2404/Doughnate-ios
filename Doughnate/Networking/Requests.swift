@@ -60,4 +60,10 @@ class Requests {
                           body: body,
                           token: token)!
     }
+    
+    static func getProjects() -> URLRequest {
+        return URLRequest(method: .get,
+                          domain: ApiUrl.host,
+                          path: ["projects/"])!
+    }
 }

@@ -33,23 +33,17 @@ private extension ProjectListViewController {
     func loadProjects() {
         tableView.isHidden = true
         spinnerView.isHidden = false
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            self.tableView.isHidden = false
-            self.spinnerView.isHidden = true
-            let imageUrl = "https://i2.wp.com/beebom.com/wp-content/uploads/2016/01/Reverse-Image-Search-Engines-Apps-And-Its-Uses-2016.jpg?w=640&ssl=1"
-            let subscriptions = [SubscriptionType.init(interval: .month, amount: 10, description: "test description"),
-                                 SubscriptionType.init(interval: .week, amount: 40, description: "test description"),
-                                 SubscriptionType.init(interval: .day, amount: 2, description: "test description 123"),
-                                 SubscriptionType.init(interval: .year, amount: 1, description: "hello world")]
-            self.projects = [
-                Project.init(imageUrl: imageUrl, name: "Wylsacom", description: "Best tech channel about iPhones", subscribers: 123456789, category: .youtube, subscriptions: subscriptions),
-                Project.init(imageUrl: imageUrl, name: "Elon Musk", description: "Business magnate and investor", subscribers: 100, category: .twitter, subscriptions: subscriptions),
-                Project.init(imageUrl: imageUrl, name: "Taylow Swift", description: "Music", subscribers: 63243, category: .music, subscriptions: subscriptions),
-                Project.init(imageUrl: imageUrl, name: "Wylsacom", description: "Best tech channel about iPhones", subscribers: 10, category: .youtube, subscriptions: subscriptions),
-                Project.init(imageUrl: imageUrl, name: "Wylsacom", description: "Best tech channel about iPhones", subscribers: 9354235432, category: .youtube, subscriptions: subscriptions),
-                Project.init(imageUrl: imageUrl, name: "Wylsacom", description: "Best tech channel about iPhones", subscribers: 9343233, category: .youtube, subscriptions: subscriptions)]
-            
-            self.tableView.reloadData()
+        ApiManager.shared.getProjects { response in
+            switch response {
+            case .failure(let error):
+                print(error)
+                self.showErrorAlert(with: "Failed to load projects")
+            case .success(let projects):
+                self.tableView.isHidden = false
+                self.spinnerView.isHidden = true
+                self.projects = projects
+                self.tableView.reloadData()
+            }
         }
     }
 }

@@ -57,4 +57,9 @@ class ApiManager {
         networkManager.perform(request, completion: completion)
     }
     
+    func getProjects(completion: @escaping ResponseCompletion<[Project], NetworkError>) {
+        let request = Requests.getProjects()
+        networkManager.perform(request, responseType: [Project].self, completion: completion)
+    }
+    
 }
