@@ -22,7 +22,7 @@ class ProjectListViewController: UIViewController {
         guard let destination = segue.destination as? ProjectDetailsViewController else { return }
         guard let cell = sender as? UITableViewCell else { return }
         guard let indexPath = tableView.indexPath(for: cell) else { return }
-        destination.project = projects[indexPath.row]
+        destination.project = projects[indexPath.section]
     }
 }
 
@@ -35,13 +35,17 @@ private extension ProjectListViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             self.tableView.isHidden = false
             self.spinnerView.isHidden = true
+            let subscriptions = [SubscriptionType.init(interval: .month, amount: 10, description: "test description"),
+                                 SubscriptionType.init(interval: .week, amount: 40, description: "test description"),
+                                 SubscriptionType.init(interval: .day, amount: 2, description: "test description 123"),
+                                 SubscriptionType.init(interval: .year, amount: 1, description: "hello world")]
             self.projects = [
-                Project.init(name: "Wylsacom", description: "Best tech channel about iPhones", subscribers: 123456789, category: .youtube),
-                Project.init(name: "Elon Musk", description: "Business magnate and investor", subscribers: 100, category: .twitter),
-                Project.init(name: "Taylow Swift", description: "Music", subscribers: 63243, category: .music),
-                Project.init(name: "Wylsacom", description: "Best tech channel about iPhones", subscribers: 10, category: .youtube),
-                Project.init(name: "Wylsacom", description: "Best tech channel about iPhones", subscribers: 9354235432, category: .youtube),
-                Project.init(name: "Wylsacom", description: "Best tech channel about iPhones", subscribers: 9343233, category: .youtube)]
+                Project.init(name: "Wylsacom", description: "Best tech channel about iPhones", subscribers: 123456789, category: .youtube, subscriptions: subscriptions),
+                Project.init(name: "Elon Musk", description: "Business magnate and investor", subscribers: 100, category: .twitter, subscriptions: subscriptions),
+                Project.init(name: "Taylow Swift", description: "Music", subscribers: 63243, category: .music, subscriptions: subscriptions),
+                Project.init(name: "Wylsacom", description: "Best tech channel about iPhones", subscribers: 10, category: .youtube, subscriptions: subscriptions),
+                Project.init(name: "Wylsacom", description: "Best tech channel about iPhones", subscribers: 9354235432, category: .youtube, subscriptions: subscriptions),
+                Project.init(name: "Wylsacom", description: "Best tech channel about iPhones", subscribers: 9343233, category: .youtube, subscriptions: subscriptions)]
             
             self.tableView.reloadData()
         }

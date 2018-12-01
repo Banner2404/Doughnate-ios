@@ -14,6 +14,7 @@ class ProjectDetailsViewController: UIViewController {
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var subscribersLabel: UILabel!
     @IBOutlet private weak var descriptionLabel: UILabel!
+    @IBOutlet private weak var subscriptionsStackView: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,5 +31,15 @@ private extension ProjectDetailsViewController {
         titleLabel.text = project.name
         subscribersLabel.text = project.subscribersString
         descriptionLabel.text = project.description
+        subscriptionsStackView.arrangedSubviews.forEach {
+            subscriptionsStackView.removeArrangedSubview($0)
+            subscriptionsStackView.removeFromSuperview()
+        }
+        project.subscriptions.forEach { subscription in
+            let view = SubscriptionTypeView()
+            view.titleLabel.text = subscription.title
+            view.descriptionLabel.text = subscription.description
+            subscriptionsStackView.addArrangedSubview(view)
+        }
     }
 }

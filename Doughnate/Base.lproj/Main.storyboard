@@ -340,18 +340,33 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subscriptions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJ8-s6-WZs">
+                                                <rect key="frame" x="20" y="155" width="335" height="48"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="335" placeholderIntrinsicHeight="157" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9vt-Fc-9rQ">
+                                                <rect key="frame" x="20" y="223" width="335" height="157"/>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="tkj-hs-DxM" firstAttribute="trailing" secondItem="QqL-Fu-NDd" secondAttribute="trailing" id="3rP-bt-ErH"/>
-                                            <constraint firstAttribute="height" constant="400" id="9n6-i4-HM5"/>
                                             <constraint firstItem="QqL-Fu-NDd" firstAttribute="top" secondItem="qqN-7F-Ej5" secondAttribute="bottom" constant="6" id="RbD-PH-CZD"/>
                                             <constraint firstItem="tkj-hs-DxM" firstAttribute="leading" secondItem="QqL-Fu-NDd" secondAttribute="leading" id="RjJ-mf-4wE"/>
                                             <constraint firstItem="tkj-hs-DxM" firstAttribute="top" secondItem="QqL-Fu-NDd" secondAttribute="bottom" constant="9" id="Rk6-4S-M6Y"/>
                                             <constraint firstItem="qqN-7F-Ej5" firstAttribute="leading" secondItem="VJz-WL-mBb" secondAttribute="leading" constant="20" id="W5A-nG-m5d"/>
                                             <constraint firstItem="QqL-Fu-NDd" firstAttribute="leading" secondItem="qqN-7F-Ej5" secondAttribute="leading" id="bi4-Vo-Ilt"/>
+                                            <constraint firstItem="9vt-Fc-9rQ" firstAttribute="trailing" secondItem="rJ8-s6-WZs" secondAttribute="trailing" id="e6h-G8-jJh"/>
                                             <constraint firstAttribute="trailing" secondItem="qqN-7F-Ej5" secondAttribute="trailing" constant="20" id="hll-aE-E64"/>
+                                            <constraint firstItem="rJ8-s6-WZs" firstAttribute="trailing" secondItem="tkj-hs-DxM" secondAttribute="trailing" id="iol-VJ-wK9"/>
+                                            <constraint firstItem="9vt-Fc-9rQ" firstAttribute="top" secondItem="rJ8-s6-WZs" secondAttribute="bottom" constant="20" id="lOf-yN-1Pp"/>
+                                            <constraint firstItem="rJ8-s6-WZs" firstAttribute="leading" secondItem="tkj-hs-DxM" secondAttribute="leading" id="lm0-Uu-uoG"/>
+                                            <constraint firstAttribute="bottom" secondItem="9vt-Fc-9rQ" secondAttribute="bottom" constant="20" id="mZr-JA-CvS"/>
                                             <constraint firstItem="QqL-Fu-NDd" firstAttribute="trailing" secondItem="qqN-7F-Ej5" secondAttribute="trailing" id="oQe-7A-W4B"/>
+                                            <constraint firstItem="9vt-Fc-9rQ" firstAttribute="leading" secondItem="rJ8-s6-WZs" secondAttribute="leading" id="rNL-NH-XF0"/>
+                                            <constraint firstItem="rJ8-s6-WZs" firstAttribute="top" secondItem="tkj-hs-DxM" secondAttribute="bottom" constant="20" id="wEA-7O-2y9"/>
                                             <constraint firstItem="qqN-7F-Ej5" firstAttribute="top" secondItem="VJz-WL-mBb" secondAttribute="top" constant="24" id="wfO-ID-J1s"/>
                                         </constraints>
                                     </view>
@@ -378,6 +393,7 @@
                     <connections>
                         <outlet property="descriptionLabel" destination="tkj-hs-DxM" id="0es-3D-o1J"/>
                         <outlet property="subscribersLabel" destination="QqL-Fu-NDd" id="FEr-b8-heq"/>
+                        <outlet property="subscriptionsStackView" destination="9vt-Fc-9rQ" id="xG8-BB-9RN"/>
                         <outlet property="titleLabel" destination="qqN-7F-Ej5" id="RaY-Jf-5Ed"/>
                     </connections>
                 </viewController>
