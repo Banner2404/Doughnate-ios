@@ -1,20 +1,24 @@
 PODS:
+  - Kingfisher (4.10.0)
   - Stripe (13.2.0)
   - SwiftKeychainWrapper (3.0.1)
 
 DEPENDENCIES:
+  - Kingfisher
   - Stripe
   - SwiftKeychainWrapper
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Kingfisher
     - Stripe
     - SwiftKeychainWrapper
 
 SPEC CHECKSUMS:
+  Kingfisher: 43c4b802d8b5256cf1f4379e9cd10b329be6d3e2
   Stripe: 2c69e216061d54d9c538204bb4f58bd597ddfc5b
   SwiftKeychainWrapper: 38952a3636320ae61bad3513cadd870929de7a4a
 
-PODFILE CHECKSUM: f90307315d375e2036c7a0d6497818502be6bcd5
+PODFILE CHECKSUM: f69ddeaaa411626bcc7fa4607761257ba25a669b
 
 COCOAPODS: 1.5.3

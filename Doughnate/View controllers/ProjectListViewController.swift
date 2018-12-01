@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ProjectListViewController: UIViewController {
 
@@ -35,17 +36,18 @@ private extension ProjectListViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             self.tableView.isHidden = false
             self.spinnerView.isHidden = true
+            let imageUrl = "https://i2.wp.com/beebom.com/wp-content/uploads/2016/01/Reverse-Image-Search-Engines-Apps-And-Its-Uses-2016.jpg?w=640&ssl=1"
             let subscriptions = [SubscriptionType.init(interval: .month, amount: 10, description: "test description"),
                                  SubscriptionType.init(interval: .week, amount: 40, description: "test description"),
                                  SubscriptionType.init(interval: .day, amount: 2, description: "test description 123"),
                                  SubscriptionType.init(interval: .year, amount: 1, description: "hello world")]
             self.projects = [
-                Project.init(name: "Wylsacom", description: "Best tech channel about iPhones", subscribers: 123456789, category: .youtube, subscriptions: subscriptions),
-                Project.init(name: "Elon Musk", description: "Business magnate and investor", subscribers: 100, category: .twitter, subscriptions: subscriptions),
-                Project.init(name: "Taylow Swift", description: "Music", subscribers: 63243, category: .music, subscriptions: subscriptions),
-                Project.init(name: "Wylsacom", description: "Best tech channel about iPhones", subscribers: 10, category: .youtube, subscriptions: subscriptions),
-                Project.init(name: "Wylsacom", description: "Best tech channel about iPhones", subscribers: 9354235432, category: .youtube, subscriptions: subscriptions),
-                Project.init(name: "Wylsacom", description: "Best tech channel about iPhones", subscribers: 9343233, category: .youtube, subscriptions: subscriptions)]
+                Project.init(imageUrl: imageUrl, name: "Wylsacom", description: "Best tech channel about iPhones", subscribers: 123456789, category: .youtube, subscriptions: subscriptions),
+                Project.init(imageUrl: imageUrl, name: "Elon Musk", description: "Business magnate and investor", subscribers: 100, category: .twitter, subscriptions: subscriptions),
+                Project.init(imageUrl: imageUrl, name: "Taylow Swift", description: "Music", subscribers: 63243, category: .music, subscriptions: subscriptions),
+                Project.init(imageUrl: imageUrl, name: "Wylsacom", description: "Best tech channel about iPhones", subscribers: 10, category: .youtube, subscriptions: subscriptions),
+                Project.init(imageUrl: imageUrl, name: "Wylsacom", description: "Best tech channel about iPhones", subscribers: 9354235432, category: .youtube, subscriptions: subscriptions),
+                Project.init(imageUrl: imageUrl, name: "Wylsacom", description: "Best tech channel about iPhones", subscribers: 9343233, category: .youtube, subscriptions: subscriptions)]
             
             self.tableView.reloadData()
         }
@@ -66,6 +68,7 @@ extension ProjectListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(ofType: ProjectTableViewCell.self, for: indexPath)
         let project = projects[indexPath.section]
+        cell.projectImageView.kf.setImage(with: URL(string: project.imageUrl)!)
         cell.projectNameLabel.text = project.name
         cell.descriptionLabel.text = project.description
         cell.subscribersLabel.text = project.subscribersString

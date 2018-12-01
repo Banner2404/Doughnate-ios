@@ -9,6 +9,7 @@
 import Foundation
 
 struct Project {
+    let imageUrl: String
     let name: String
     let description: String
     let subscribers: Int
