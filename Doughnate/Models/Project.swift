@@ -9,6 +9,7 @@
 import Foundation
 
 struct Project: Decodable {
+    let id: Int
     let imageUrl: String
     let name: String
     let description: String
@@ -23,6 +24,7 @@ struct Project: Decodable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.imageUrl = "https://i2.wp.com/beebom.com/wp-content/uploads/2016/01/Reverse-Image-Search-Engines-Apps-And-Its-Uses-2016.jpg?w=640&ssl=1"
+        self.id = try container.decode(Int.self, forKey: .id)
         self.name = try container.decode(String.self, forKey: .name)
         self.description = try container.decode(String.self, forKey: .description)
         self.subscribers = 100
@@ -34,6 +36,7 @@ struct Project: Decodable {
     }
     
     enum CodingKeys: String, CodingKey {
+        case id
         case name
         case description
     }

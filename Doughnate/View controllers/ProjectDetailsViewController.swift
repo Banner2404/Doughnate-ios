@@ -20,6 +20,12 @@ class ProjectDetailsViewController: UIViewController {
         super.viewDidLoad()
         setupProjectInfo()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let navc = segue.destination as? UINavigationController else { return }
+        guard let vc = navc.viewControllers.first as? ReportViewController else { return }
+        vc.project = project
+    }
 
 }
 

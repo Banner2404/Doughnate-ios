@@ -42,7 +42,7 @@ class ChangePasswordViewController: UIViewController {
                 print(error)
                 self.showErrorAlert(with: "Failed to update password")
             case .success:
-                self.showErrorAlert(with: "Password was successfully changed")
+                self.showInfoAlert(title: "Success", message: "Password was successfully changed")
                 self.navigationController?.popViewController(animated: true)
             }
         }

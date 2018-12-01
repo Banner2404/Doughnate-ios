@@ -10,6 +10,7 @@ import UIKit
 
 class ReportViewController: UIViewController {
 
+    var project: Project!
     @IBOutlet weak var textField: UITextView!
     
     override func viewDidLoad() {
@@ -25,6 +26,16 @@ class ReportViewController: UIViewController {
     }
     
     @IBAction func sendButtonTap(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        let message = textField.text ?? ""
+        ApiManager.shared.report(projectId: project.id, message: message) { response in
+            switch response {
+            case .failure(let error):
+                self.showErrorAlert(with: "Failed to report project")
+            case .success:
+                self.showInfoAlert(title: "Thanks", message: "Your message will be reviewed shortly") {
+                    self.dismiss(animated: true, completion: nil)
+                }
+            }
+        }
     }
 }

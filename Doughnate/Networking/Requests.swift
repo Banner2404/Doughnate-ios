@@ -66,4 +66,14 @@ class Requests {
                           domain: ApiUrl.host,
                           path: ["projects/"])!
     }
+    
+    static func report(projectId: Int, message: String) -> URLRequest {
+        let body: [String: Any] =
+            ["project_id": projectId,
+            "message": message]
+        return URLRequest(method: .post,
+                          domain: ApiUrl.host,
+                          path: ["reports/"],
+                          body: body)!
+    }
 }
