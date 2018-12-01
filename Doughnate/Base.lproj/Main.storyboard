@@ -389,7 +389,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0HG-ru-SBB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Details" largeTitleDisplayMode="never" id="kTh-Yg-XYU"/>
+                    <navigationItem key="navigationItem" title="Details" largeTitleDisplayMode="never" id="kTh-Yg-XYU">
+                        <barButtonItem key="rightBarButtonItem" title="Report" id="D8r-tX-Q7t">
+                            <connections>
+                                <segue destination="RBo-1V-pmE" kind="presentation" id="Wk8-yg-Ayi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="descriptionLabel" destination="tkj-hs-DxM" id="0es-3D-o1J"/>
                         <outlet property="subscribersLabel" destination="QqL-Fu-NDd" id="FEr-b8-heq"/>
@@ -400,6 +406,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PW3-AA-dW1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2780" y="134"/>
+        </scene>
+        <!--Report Project-->
+        <scene sceneID="p5u-hX-zRq">
+            <objects>
+                <viewController id="l9Q-kQ-tUK" customClass="ReportViewController" customModule="Doughnate" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CJt-q2-8yX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please describe your problem below:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O7e-EG-QgW">
+                                <rect key="frame" x="20" y="94" width="281.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="f1O-Ml-PK4">
+                                <rect key="frame" x="20" y="145" width="335" height="502"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="f1O-Ml-PK4" firstAttribute="leading" secondItem="8Tw-xT-8Yy" secondAttribute="leading" constant="20" id="0bd-GM-u0w"/>
+                            <constraint firstItem="O7e-EG-QgW" firstAttribute="leading" secondItem="8Tw-xT-8Yy" secondAttribute="leading" constant="20" id="KXq-Jo-ap7"/>
+                            <constraint firstItem="O7e-EG-QgW" firstAttribute="top" secondItem="8Tw-xT-8Yy" secondAttribute="top" constant="30" id="Psb-Pl-AqQ"/>
+                            <constraint firstItem="8Tw-xT-8Yy" firstAttribute="bottom" secondItem="f1O-Ml-PK4" secondAttribute="bottom" constant="20" id="eYk-9j-63O"/>
+                            <constraint firstItem="f1O-Ml-PK4" firstAttribute="top" secondItem="O7e-EG-QgW" secondAttribute="bottom" constant="30" id="lJy-VY-t6e"/>
+                            <constraint firstItem="8Tw-xT-8Yy" firstAttribute="trailing" secondItem="f1O-Ml-PK4" secondAttribute="trailing" constant="20" id="vZ7-b7-qCK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8Tw-xT-8Yy"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Report Project" id="a00-B8-rP8">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="C8o-6i-Hep">
+                            <connections>
+                                <action selector="cancelButtonTap:" destination="l9Q-kQ-tUK" id="XOe-ey-1nC"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Send" style="done" id="nc6-0u-LrZ">
+                            <connections>
+                                <action selector="sendButtonTap:" destination="l9Q-kQ-tUK" id="MYa-70-Hhx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="textField" destination="f1O-Ml-PK4" id="X0t-O0-IfP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="53Z-ri-gOW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4545" y="-169"/>
         </scene>
         <!--Change Password-->
         <scene sceneID="tgf-eh-DJI">
@@ -1228,6 +1285,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7OY-zy-Y9D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-346" y="-748"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="k3I-04-Sd2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RBo-1V-pmE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5dR-ss-pfU">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="l9Q-kQ-tUK" kind="relationship" relationship="rootViewController" id="nFP-Tt-Ef1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EgD-er-tNN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3606" y="-169"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
