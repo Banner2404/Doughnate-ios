@@ -10,7 +10,6 @@ import Foundation
 
 struct Project: Decodable {
     let id: Int
-    let imageUrl: String
     let name: String
     let description: String
     let subscribers: Int
@@ -18,6 +17,8 @@ struct Project: Decodable {
     let subscriptions: [SubscriptionType]
     var activeSubscription: SubscriptionType?
     
+    private let imageUrlString: String
+
     var subscribersString: String {
         return subscribers.shortString + " subscribers"
     }
@@ -26,9 +27,13 @@ struct Project: Decodable {
         return activeSubscription != nil
     }
     
+    var imageUrl: URL? {
+        return URL(string: imageUrlString)
+    }
+    
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.imageUrl = "https://i2.wp.com/beebom.com/wp-content/uploads/2016/01/Reverse-Image-Search-Engines-Apps-And-Its-Uses-2016.jpg?w=640&ssl=1"
+        self.imageUrlString = try container.decode(String.self, forKey: .imageUrlString)
         self.id = try container.decode(Int.self, forKey: .id)
         self.name = try container.decode(String.self, forKey: .name)
         self.description = try container.decode(String.self, forKey: .description)
@@ -43,5 +48,6 @@ struct Project: Decodable {
         case name
         case description
         case subscriptions = "subscription_plans"
+        case imageUrlString = "logo_image"
     }
 }

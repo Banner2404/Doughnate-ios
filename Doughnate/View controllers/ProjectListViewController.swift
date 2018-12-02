@@ -62,7 +62,7 @@ extension ProjectListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(ofType: ProjectTableViewCell.self, for: indexPath)
         let project = projects[indexPath.section]
-        cell.projectImageView.kf.setImage(with: URL(string: project.imageUrl)!)
+        cell.projectImageView.kf.setImage(with: project.imageUrl)
         cell.projectNameLabel.text = project.name
         cell.descriptionLabel.text = project.description
         cell.subscribersLabel.text = project.subscribersString
