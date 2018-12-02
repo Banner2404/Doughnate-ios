@@ -71,4 +71,14 @@ class ApiManager {
         let request = Requests.subscribe(projectId: projectId, subscriptionId: subscriptionId, token: token)
         networkManager.perform(request, completion: completion)
     }
+    
+    func enableTwoFactorAuth(phone: String, userId: Int, token: String, completion: @escaping ResponseCompletion<User, NetworkError>) {
+        let request = Requests.enableTwoFactorAuth(userId: userId, phone: phone, token: token)
+        networkManager.perform(request, responseType: User.self, completion: completion)
+    }
+    
+    func disableTwoFactorAuth(userId: Int, token: String, completion: @escaping ResponseCompletion<User, NetworkError>) {
+        let request = Requests.disableTwoFactorAuth(userId: userId, token: token)
+        networkManager.perform(request, responseType: User.self, completion: completion)
+    }
 }

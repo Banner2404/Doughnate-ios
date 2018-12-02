@@ -62,6 +62,25 @@ class Requests {
                           token: token)!
     }
     
+    static func enableTwoFactorAuth(userId: Int, phone: String, token: String) -> URLRequest {
+        let body: [String: Any] = ["phone": phone,
+                    "two_factor_auth_enabled": true]
+        return URLRequest(method: .put,
+                          domain: ApiUrl.host,
+                          path: ["profiles", "\(userId)/"],
+                          body: body,
+                          token: token)!
+    }
+    
+    static func disableTwoFactorAuth(userId: Int, token: String) -> URLRequest {
+        let body: [String: Any] = ["two_factor_auth_enabled": false]
+        return URLRequest(method: .put,
+                          domain: ApiUrl.host,
+                          path: ["profiles", "\(userId)/"],
+                          body: body,
+                          token: token)!
+    }
+    
     static func getProjects() -> URLRequest {
         return URLRequest(method: .get,
                           domain: ApiUrl.host,

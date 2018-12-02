@@ -19,7 +19,22 @@ class SMSSetupViewController: UIViewController {
     }
     
     @IBAction func enableButtonTap(_ sender: Any) {
-        print(phoneNumberTextField.text)
+        guard let user = UserManager.shared.user else { return }
+        guard let token = UserManager.shared.token else { return }
         activityIndicator.startAnimating()
+        let phone = "+375" + (phoneNumberTextField.text ?? "")
+        ApiManager.shared.enableTwoFactorAuth(phone: phone, userId: user.id, token: token.accessToken) { response in
+            self.activityIndicator.stopAnimating()
+            switch response {
+            case .failure(let error):
+                print(error)
+                self.showErrorAlert(with: "Failed to enable two factor authentication")
+            case .success(let user):
+                UserManager.shared.update(user)
+                self.showInfoAlert(title: "Success", message: "Two factor authentication was successfully enabled") {
+                    self.navigationController?.popViewController(animated: true)
+                }
+            }
+        }
     }
 }

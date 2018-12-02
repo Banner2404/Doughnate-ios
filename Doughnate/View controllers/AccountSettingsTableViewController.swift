@@ -31,6 +31,18 @@ class AccountSettingsTableViewController: UITableViewController {
     @IBAction func smsSwitchChanged(_ sender: Any) {
         if smsSwitch.isOn {
             performSegue(withIdentifier: "smsSetupSegue", sender: self)
+        } else {
+            guard let user = UserManager.shared.user else { return }
+            guard let token = UserManager.shared.token else { return }
+            ApiManager.shared.disableTwoFactorAuth(userId: user.id, token: token.accessToken) { response in
+                switch response {
+                case .failure(let error):
+                    self.smsSwitch.isOn = true
+                    self.showErrorAlert(with: "Failed to disable two factor authentication")
+                case .success(let user):
+                    UserManager.shared.update(user)
+                }
+            }
         }
     }
     
