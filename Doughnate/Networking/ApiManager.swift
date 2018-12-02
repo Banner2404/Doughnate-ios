@@ -52,9 +52,9 @@ class ApiManager {
         networkManager.perform(request, completion: completion)
     }
     
-    func update(user: User, token: String, completion: @escaping SimpleResponseCompletion<NetworkError>) {
-        let request = Requests.update(user, token: token)
-        networkManager.perform(request, completion: completion)
+    func update(firstName: String, lastName: String, userId: Int, token: String, completion: @escaping ResponseCompletion<User, NetworkError>) {
+        let request = Requests.update(userId: userId, firstName: firstName, lastName: lastName, token: token)
+        networkManager.perform(request, responseType: User.self, completion: completion)
     }
     
     func getProjects(completion: @escaping ResponseCompletion<[Project], NetworkError>) {

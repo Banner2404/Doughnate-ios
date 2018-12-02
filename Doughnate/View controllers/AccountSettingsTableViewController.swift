@@ -35,16 +35,17 @@ class AccountSettingsTableViewController: UITableViewController {
     }
     
     @IBAction func saveButtonTap(_ sender: Any) {
-        guard var user = UserManager.shared.user else { return }
+        guard let user = UserManager.shared.user else { return }
         guard let token = UserManager.shared.token?.accessToken else { return }
-        user.firstName = firstNameTextField.text ?? ""
-        user.lastName = lastNameTextField.text ?? ""
-        ApiManager.shared.update(user: user, token: token) { response in
+        let firstName = firstNameTextField.text ?? ""
+        let lastName = lastNameTextField.text ?? ""
+        ApiManager.shared.update(firstName: firstName, lastName: lastName, userId: user.id, token: token) { response in
             switch response {
             case .failure(let error):
                 print(error)
                 self.showErrorAlert(with: "Failed to update user info")
-            case .success:
+            case .success(let user):
+                UserManager.shared.update(user)
                 self.navigationController?.popViewController(animated: true)
             }
         }

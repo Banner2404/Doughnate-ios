@@ -52,11 +52,12 @@ class Requests {
                           body: body)!
     }
     
-    static func update(_ user: User, token: String) -> URLRequest {
-        let body = try! JSONEncoder().encode(user)
+    static func update(userId: Int, firstName: String, lastName: String, token: String) -> URLRequest {
+        let body = ["first_name": firstName,
+                    "last_name": lastName]
         return URLRequest(method: .put,
                           domain: ApiUrl.host,
-                          path: ["users", "\(user.id)/"],
+                          path: ["profiles", "\(userId)/"],
                           body: body,
                           token: token)!
     }
