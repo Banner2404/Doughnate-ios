@@ -15,9 +15,9 @@ class ApiManager {
     
     private init() {}
     
-    func login(email: String, password: String, completion: @escaping ResponseCompletion<Token, NetworkError>) {
+    func login(email: String, password: String, completion: @escaping ResponseCompletion<Account, NetworkError>) {
         let request = Requests.login(email: email, password: password)
-        networkManager.perform(request, responseType: Token.self) { response in
+        networkManager.perform(request, responseType: Account.self) { response in
             switch response {
             case .failure(let error):
                 switch error {
@@ -32,9 +32,9 @@ class ApiManager {
         }
     }
     
-    func loginSMS(code: String, completion: @escaping ResponseCompletion<Token, NetworkError>) {
+    func loginSMS(code: String, completion: @escaping ResponseCompletion<Account, NetworkError>) {
         let request = Requests.loginSMS(code: code)
-        networkManager.perform(request, responseType: Token.self, completion: completion)
+        networkManager.perform(request, responseType: Account.self, completion: completion)
     }
     
     func signup(email: String, password: String, completion: @escaping SimpleResponseCompletion<NetworkError>) {

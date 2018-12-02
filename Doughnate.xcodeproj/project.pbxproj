@@ -11,6 +11,7 @@
 		D107466C21B453550068536F /* SubscriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D107466B21B453550068536F /* SubscriptionTableViewCell.swift */; };
 		D107466E21B453EA0068536F /* SubscriptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D107466D21B453EA0068536F /* SubscriptionsViewController.swift */; };
 		D107467021B454950068536F /* Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = D107466F21B454950068536F /* Subscription.swift */; };
+		D107467221B45D1F0068536F /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = D107467121B45D1F0068536F /* Account.swift */; };
 		D11B259721A2C52D00ADC7F9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11B259621A2C52D00ADC7F9 /* LoginViewController.swift */; };
 		D11B259921A2C66600ADC7F9 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11B259821A2C66600ADC7F9 /* SignUpViewController.swift */; };
 		D11B259C21A2C87A00ADC7F9 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11B259B21A2C87A00ADC7F9 /* UserManager.swift */; };
@@ -66,6 +67,7 @@
 		D107466B21B453550068536F /* SubscriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionTableViewCell.swift; sourceTree = "<group>"; };
 		D107466D21B453EA0068536F /* SubscriptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsViewController.swift; sourceTree = "<group>"; };
 		D107466F21B454950068536F /* Subscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscription.swift; sourceTree = "<group>"; };
+		D107467121B45D1F0068536F /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		D11B259621A2C52D00ADC7F9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D11B259821A2C66600ADC7F9 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		D11B259B21A2C87A00ADC7F9 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 			children = (
 				D1ADA85B21ABF909006B2CCD /* NetworkError.swift */,
 				D1ADA85D21ABF92C006B2CCD /* Response.swift */,
+				D107467121B45D1F0068536F /* Account.swift */,
 				D1FC0DAE21772AAA00A058F1 /* Project.swift */,
 				D1FC0DC521775F6700A058F1 /* Filter.swift */,
 				D11B259F21A2DC4F00ADC7F9 /* Token.swift */,
@@ -407,6 +410,7 @@
 				D107466E21B453EA0068536F /* SubscriptionsViewController.swift in Sources */,
 				D1AB923F21B0678C00D95752 /* CreditCardsViewController.swift in Sources */,
 				D11B25A621A2E30100ADC7F9 /* AccountSettingsTableViewController.swift in Sources */,
+				D107467221B45D1F0068536F /* Account.swift in Sources */,
 				D11B259721A2C52D00ADC7F9 /* LoginViewController.swift in Sources */,
 				D1FC0D9D2177247400A058F1 /* ProjectListViewController.swift in Sources */,
 				D1FC0DC621775F6700A058F1 /* Filter.swift in Sources */,

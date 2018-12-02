@@ -24,11 +24,11 @@ class UserManager {
         self.keychainManager = keychainManager
     }
     
-    func authenticate(with user: User, token: Token) {
-        self.token = token
-        self.user = user
-        keychainManager.save(token)
-        keychainManager.save(user)
+    func authenticate(with account: Account) {
+        self.token = account.token
+        self.user = account.user
+        keychainManager.save(account.token)
+        keychainManager.save(account.user)
     }
     
     func unauthenticate() {

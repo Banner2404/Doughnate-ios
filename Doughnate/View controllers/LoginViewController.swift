@@ -36,9 +36,8 @@ class LoginViewController: UIViewController {
                 default:
                     self.showErrorAlert(with: "Incorrect credentials")
                 }
-            case .success(let token):
-                let cards = [CreditCard(lastFour: "1234", brand: .visa), CreditCard(lastFour: "4242", brand: .mastercard)]
-                UserManager.shared.authenticate(with: User(firstName: "123", lastName: "123", email: "etew", creditCards: cards), token: token)
+            case .success(let account):
+                UserManager.shared.authenticate(with: account)
                 self.dismiss(animated: true, completion: nil)
             }
         }

@@ -197,6 +197,11 @@
                                 <state key="normal" title="Submit">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="signUpButtonTap:" destination="mtW-4V-5md" eventType="touchUpInside" id="wlL-LO-CDE"/>
                                     <action selector="submitButtonTap:" destination="Toc-zk-TfQ" eventType="touchUpInside" id="BFz-rm-AmR"/>
@@ -518,6 +523,11 @@
                                 <state key="normal" title="Change">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="changeButtonTap:" destination="OOu-Nh-1IM" eventType="touchUpInside" id="nCQ-E9-8u8"/>
                                 </connections>
@@ -633,6 +643,11 @@
                                 <state key="normal" title="Log In">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="loginButtonTap:" destination="fic-pZ-fKH" eventType="touchUpInside" id="xcZ-80-hZz"/>
                                 </connections>
@@ -749,6 +764,11 @@
                                 <state key="normal" title="Restore">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="loginButtonTap:" destination="fic-pZ-fKH" eventType="touchUpInside" id="VRu-AN-hgD"/>
                                     <action selector="restoreButtonTap:" destination="pen-ko-yxt" eventType="touchUpInside" id="Hs9-nr-qi0"/>
@@ -808,6 +828,11 @@
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="signUpButtonTap:" destination="mtW-4V-5md" eventType="touchUpInside" id="80G-8B-MnG"/>
                                 </connections>
@@ -1171,6 +1196,11 @@
                                 <state key="normal" title="Enable">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="enableButtonTap:" destination="1p9-w5-q3l" eventType="touchUpInside" id="1bk-O3-L2C"/>
                                 </connections>
