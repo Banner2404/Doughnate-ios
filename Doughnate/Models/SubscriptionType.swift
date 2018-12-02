@@ -16,7 +16,14 @@ struct SubscriptionType: Decodable {
     let description: String
     
     var title: String {
-        return "$\(amount) per \(interval.rawValue):"
+        return "$\(amount) per \(interval.rawValue)"
+    }
+    
+    init() {
+        self.id = 1
+        self.interval = .day
+        self.amount = 99
+        self.description = "fdjgiodfmsogd"
     }
     
     enum Interval: String, Decodable {

@@ -43,6 +43,17 @@ struct Project: Decodable {
         self.activeSubscription = nil
     }
     
+    init() {
+        self.id = 1
+        self.name = "Mock"
+        self.description = ""
+        self.subscribers = 1
+        self.category = .music
+        self.subscriptions = []
+        self.activeSubscription = nil
+        self.imageUrlString = ""
+    }
+    
     enum CodingKeys: String, CodingKey {
         case id
         case name

@@ -64,7 +64,7 @@ private extension ProjectDetailsViewController {
     
     func createSubscriptionView(for subscription: SubscriptionType) -> SubscriptionTypeView {
         let view = SubscriptionTypeView()
-        view.titleLabel.text = subscription.title
+        view.titleLabel.text = subscription.title + ":"
         view.descriptionLabel.text = subscription.description
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(subscriptionCellTap))

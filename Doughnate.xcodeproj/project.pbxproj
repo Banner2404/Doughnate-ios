@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		72323687D01ACA7B0E7C9834 /* Pods_Doughnate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96AB9934A9BF019EC2CEB8F7 /* Pods_Doughnate.framework */; };
+		D107466C21B453550068536F /* SubscriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D107466B21B453550068536F /* SubscriptionTableViewCell.swift */; };
+		D107466E21B453EA0068536F /* SubscriptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D107466D21B453EA0068536F /* SubscriptionsViewController.swift */; };
+		D107467021B454950068536F /* Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = D107466F21B454950068536F /* Subscription.swift */; };
 		D11B259721A2C52D00ADC7F9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11B259621A2C52D00ADC7F9 /* LoginViewController.swift */; };
 		D11B259921A2C66600ADC7F9 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11B259821A2C66600ADC7F9 /* SignUpViewController.swift */; };
 		D11B259C21A2C87A00ADC7F9 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11B259B21A2C87A00ADC7F9 /* UserManager.swift */; };
@@ -60,6 +63,9 @@
 		4B63174CF22EEF1D6072D336 /* Pods-Doughnate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doughnate.release.xcconfig"; path = "Pods/Target Support Files/Pods-Doughnate/Pods-Doughnate.release.xcconfig"; sourceTree = "<group>"; };
 		645CE2C1FA4618ED2CDA2A49 /* Pods-Doughnate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doughnate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Doughnate/Pods-Doughnate.debug.xcconfig"; sourceTree = "<group>"; };
 		96AB9934A9BF019EC2CEB8F7 /* Pods_Doughnate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Doughnate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D107466B21B453550068536F /* SubscriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionTableViewCell.swift; sourceTree = "<group>"; };
+		D107466D21B453EA0068536F /* SubscriptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsViewController.swift; sourceTree = "<group>"; };
+		D107466F21B454950068536F /* Subscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscription.swift; sourceTree = "<group>"; };
 		D11B259621A2C52D00ADC7F9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D11B259821A2C66600ADC7F9 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		D11B259B21A2C87A00ADC7F9 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
@@ -213,6 +219,7 @@
 				D11B259821A2C66600ADC7F9 /* SignUpViewController.swift */,
 				D1AB923E21B0678C00D95752 /* CreditCardsViewController.swift */,
 				D157893321B3171A00B3544B /* ReportViewController.swift */,
+				D107466D21B453EA0068536F /* SubscriptionsViewController.swift */,
 			);
 			path = "View controllers";
 			sourceTree = "<group>";
@@ -228,6 +235,7 @@
 				D11B25A721A2E33C00ADC7F9 /* User.swift */,
 				D1AB924021B069F400D95752 /* CreditCard.swift */,
 				D1DE4F2321B19FD400295C54 /* SubscriptionType.swift */,
+				D107466F21B454950068536F /* Subscription.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -249,6 +257,7 @@
 				D1FC0DB221772B1B00A058F1 /* ProjectTableViewCell.swift */,
 				D1FC0DC321775D0500A058F1 /* FilterTableViewCell.swift */,
 				D1AB924221B06C6F00D95752 /* CreditCardTableViewCell.swift */,
+				D107466B21B453550068536F /* SubscriptionTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -395,6 +404,7 @@
 			files = (
 				D1DE4F2A21B1A36C00295C54 /* UIView.swift in Sources */,
 				D1ADA85A21ABF896006B2CCD /* NetworkManager.swift in Sources */,
+				D107466E21B453EA0068536F /* SubscriptionsViewController.swift in Sources */,
 				D1AB923F21B0678C00D95752 /* CreditCardsViewController.swift in Sources */,
 				D11B25A621A2E30100ADC7F9 /* AccountSettingsTableViewController.swift in Sources */,
 				D11B259721A2C52D00ADC7F9 /* LoginViewController.swift in Sources */,
@@ -417,6 +427,8 @@
 				D11B25A821A2E33C00ADC7F9 /* User.swift in Sources */,
 				D1FC0DC2217739F500A058F1 /* FiltersViewController.swift in Sources */,
 				D1ADA86D21AC0BBA006B2CCD /* PhoneVerificationViewController.swift in Sources */,
+				D107466C21B453550068536F /* SubscriptionTableViewCell.swift in Sources */,
+				D107467021B454950068536F /* Subscription.swift in Sources */,
 				D1ADA86221ABF997006B2CCD /* URLRequest.swift in Sources */,
 				D1DE4F2421B19FD400295C54 /* SubscriptionType.swift in Sources */,
 				D11B25A021A2DC4F00ADC7F9 /* Token.swift in Sources */,
