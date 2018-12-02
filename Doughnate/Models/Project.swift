@@ -16,9 +16,14 @@ struct Project: Decodable {
     let subscribers: Int
     let category: Category
     let subscriptions: [SubscriptionType]
+    let activeSubscription: SubscriptionType?
     
     var subscribersString: String {
         return subscribers.shortString + " subscribers"
+    }
+    
+    var isSubscribed: Bool {
+        return activeSubscription != nil
     }
     
     init(from decoder: Decoder) throws {
@@ -29,15 +34,14 @@ struct Project: Decodable {
         self.description = try container.decode(String.self, forKey: .description)
         self.subscribers = 100
         self.category = .youtube
-        self.subscriptions = [SubscriptionType.init(interval: .month, amount: 10, description: "test description"),
-                              SubscriptionType.init(interval: .week, amount: 40, description: "test description"),
-                              SubscriptionType.init(interval: .day, amount: 2, description: "test description 123"),
-                              SubscriptionType.init(interval: .year, amount: 1, description: "hello world")]
+        self.subscriptions = try container.decode([SubscriptionType].self, forKey: .subscriptions)
+        self.activeSubscription = self.subscriptions.first
     }
     
     enum CodingKeys: String, CodingKey {
         case id
         case name
         case description
+        case subscriptions = "subscription_plans"
     }
 }

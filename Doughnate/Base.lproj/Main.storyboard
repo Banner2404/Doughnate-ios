@@ -320,7 +320,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VJz-WL-mBb">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="400"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="440"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qqN-7F-Ej5">
                                                 <rect key="frame" x="20" y="24" width="335" height="48"/>
@@ -340,7 +340,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subscriptions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJ8-s6-WZs">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subscriptions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="rJ8-s6-WZs">
                                                 <rect key="frame" x="20" y="155" width="335" height="48"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                                 <nil key="textColor"/>
@@ -349,6 +349,15 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="335" placeholderIntrinsicHeight="157" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9vt-Fc-9rQ">
                                                 <rect key="frame" x="20" y="223" width="335" height="157"/>
                                             </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Jq-Dq-lBS">
+                                                <rect key="frame" x="20" y="400" width="87" height="30"/>
+                                                <state key="normal" title="Unsubscribe">
+                                                    <color key="titleColor" red="0.88235294119999996" green="0.20784313730000001" blue="0.57254901960000004" alpha="1" colorSpace="deviceRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="unsubscribeButtonTap:" destination="XTS-Lb-dh7" eventType="touchUpInside" id="zFo-oU-cy1"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -361,11 +370,14 @@
                                             <constraint firstItem="9vt-Fc-9rQ" firstAttribute="trailing" secondItem="rJ8-s6-WZs" secondAttribute="trailing" id="e6h-G8-jJh"/>
                                             <constraint firstAttribute="trailing" secondItem="qqN-7F-Ej5" secondAttribute="trailing" constant="20" id="hll-aE-E64"/>
                                             <constraint firstItem="rJ8-s6-WZs" firstAttribute="trailing" secondItem="tkj-hs-DxM" secondAttribute="trailing" id="iol-VJ-wK9"/>
+                                            <constraint firstItem="3Jq-Dq-lBS" firstAttribute="leading" secondItem="9vt-Fc-9rQ" secondAttribute="leading" id="kSk-ar-6UB"/>
                                             <constraint firstItem="9vt-Fc-9rQ" firstAttribute="top" secondItem="rJ8-s6-WZs" secondAttribute="bottom" constant="20" id="lOf-yN-1Pp"/>
                                             <constraint firstItem="rJ8-s6-WZs" firstAttribute="leading" secondItem="tkj-hs-DxM" secondAttribute="leading" id="lm0-Uu-uoG"/>
-                                            <constraint firstAttribute="bottom" secondItem="9vt-Fc-9rQ" secondAttribute="bottom" constant="20" id="mZr-JA-CvS"/>
+                                            <constraint firstAttribute="bottom" secondItem="9vt-Fc-9rQ" secondAttribute="bottom" constant="60" id="mZr-JA-CvS"/>
+                                            <constraint firstAttribute="bottom" secondItem="3Jq-Dq-lBS" secondAttribute="bottom" constant="10" id="nSW-Jh-tSU"/>
                                             <constraint firstItem="QqL-Fu-NDd" firstAttribute="trailing" secondItem="qqN-7F-Ej5" secondAttribute="trailing" id="oQe-7A-W4B"/>
                                             <constraint firstItem="9vt-Fc-9rQ" firstAttribute="leading" secondItem="rJ8-s6-WZs" secondAttribute="leading" id="rNL-NH-XF0"/>
+                                            <constraint firstItem="3Jq-Dq-lBS" firstAttribute="top" secondItem="9vt-Fc-9rQ" secondAttribute="bottom" constant="20" id="rua-7u-ztg"/>
                                             <constraint firstItem="rJ8-s6-WZs" firstAttribute="top" secondItem="tkj-hs-DxM" secondAttribute="bottom" constant="20" id="wEA-7O-2y9"/>
                                             <constraint firstItem="qqN-7F-Ej5" firstAttribute="top" secondItem="VJz-WL-mBb" secondAttribute="top" constant="24" id="wfO-ID-J1s"/>
                                         </constraints>
@@ -400,7 +412,9 @@
                         <outlet property="descriptionLabel" destination="tkj-hs-DxM" id="0es-3D-o1J"/>
                         <outlet property="subscribersLabel" destination="QqL-Fu-NDd" id="FEr-b8-heq"/>
                         <outlet property="subscriptionsStackView" destination="9vt-Fc-9rQ" id="xG8-BB-9RN"/>
+                        <outlet property="subscriptionsTitle" destination="rJ8-s6-WZs" id="9Uc-P1-MAL"/>
                         <outlet property="titleLabel" destination="qqN-7F-Ej5" id="RaY-Jf-5Ed"/>
+                        <outlet property="unsubscribeButton" destination="3Jq-Dq-lBS" id="xOj-tH-qGC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PW3-AA-dW1" userLabel="First Responder" sceneMemberID="firstResponder"/>

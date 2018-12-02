@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct SubscriptionType {
+struct SubscriptionType: Decodable {
     
     let interval: Interval
     let amount: Int
@@ -18,7 +18,7 @@ struct SubscriptionType {
         return "$\(amount) per \(interval.rawValue):"
     }
     
-    enum Interval: String {
+    enum Interval: String, Decodable {
         case day
         case week
         case month

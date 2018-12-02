@@ -11,10 +11,19 @@ import UIKit
 class ProjectDetailsViewController: UIViewController {
 
     var project: Project!
+    var displayedSubscriptions: [SubscriptionType] {
+        if let sub = project.activeSubscription {
+            return [sub]
+        } else {
+            return project.subscriptions
+        }
+    }
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var subscribersLabel: UILabel!
     @IBOutlet private weak var descriptionLabel: UILabel!
     @IBOutlet private weak var subscriptionsStackView: UIStackView!
+    @IBOutlet private weak var subscriptionsTitle: UILabel!
+    @IBOutlet private weak var unsubscribeButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +35,12 @@ class ProjectDetailsViewController: UIViewController {
         guard let vc = navc.viewControllers.first as? ReportViewController else { return }
         vc.project = project
     }
-
+    @IBAction func unsubscribeButtonTap(_ sender: Any) {
+        showAlert(title: "Unsubscribe?", message: "Do you want to unsubscribe from \(project.name)") {
+            print("Cancel")
+        }
+    }
+    
 }
 
 //MARK: - Private
@@ -35,13 +49,15 @@ private extension ProjectDetailsViewController {
     func setupProjectInfo() {
         navigationItem.title = project.name
         titleLabel.text = project.name
+        unsubscribeButton.isHidden = !project.isSubscribed
+        subscriptionsTitle.text = project.isSubscribed ? "You are Subscribed" : "Subscriptions"
         subscribersLabel.text = project.subscribersString
         descriptionLabel.text = project.description
         subscriptionsStackView.arrangedSubviews.forEach {
             subscriptionsStackView.removeArrangedSubview($0)
             subscriptionsStackView.removeFromSuperview()
         }
-        project.subscriptions.forEach {
+        displayedSubscriptions.forEach {
             subscriptionsStackView.addArrangedSubview(createSubscriptionView(for: $0))
         }
     }
@@ -58,6 +74,7 @@ private extension ProjectDetailsViewController {
     
     @objc
     func subscriptionCellTap(_ recognizer: UIGestureRecognizer) {
+        guard !project.isSubscribed else { return }
         guard let cell = recognizer.view else { return }
         guard let index = subscriptionsStackView.arrangedSubviews.firstIndex(of: cell) else { return }
         let subscription = project.subscriptions[index]
@@ -65,14 +82,19 @@ private extension ProjectDetailsViewController {
     }
     
     func subscribe(to subscription: SubscriptionType) {
-        let alert = UIAlertController(title: "Subscribe?", message: "Do you want to subscribe to $\(subscription.amount) plan?", preferredStyle: .alert)
+        showAlert(title: "Subscribe?", message: "Do you want to subscribe to $\(subscription.amount) plan?") {
+            print(subscription)
+        }
+    }
+    
+    func showAlert(title: String, message: String, onYes: @escaping () -> Void) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let noAction = UIAlertAction(title: "No", style: .default, handler: nil)
         let yesAction = UIAlertAction(title: "Yes", style: .default) { _ in
-            print(subscription)
+            onYes()
         }
         alert.addAction(noAction)
         alert.addAction(yesAction)
-        alert.preferredAction = yesAction
         present(alert, animated: true, completion: nil)
     }
 }
