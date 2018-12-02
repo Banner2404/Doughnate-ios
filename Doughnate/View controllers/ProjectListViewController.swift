@@ -17,6 +17,8 @@ class ProjectListViewController: UIViewController {
     
     override func viewDidLoad() {
         loadProjects()
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl?.addTarget(self, action: #selector(reloadData), for: .valueChanged)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -25,10 +27,27 @@ class ProjectListViewController: UIViewController {
         guard let indexPath = tableView.indexPath(for: cell) else { return }
         destination.project = projects[indexPath.section]
     }
+    
+    
 }
 
 //MARK: - Private
 private extension ProjectListViewController {
+    
+    @objc
+    func reloadData() {
+        ApiManager.shared.getProjects { response in
+            self.tableView.refreshControl?.endRefreshing()
+            switch response {
+            case .failure(let error):
+                print(error)
+                self.showErrorAlert(with: "Failed to load projects")
+            case .success(let projects):
+                self.projects = projects
+                self.tableView.reloadData()
+            }
+        }
+    }
     
     func loadProjects() {
         tableView.isHidden = true
