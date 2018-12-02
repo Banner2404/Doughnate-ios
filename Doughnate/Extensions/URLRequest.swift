@@ -29,7 +29,7 @@ extension URLRequest {
         }
         self.addValue("application/json", forHTTPHeaderField: "Accept")
         if let token = token {
-            self.addValue(token, forHTTPHeaderField: "Authorization")
+            self.addValue("Token " + token, forHTTPHeaderField: "Authorization")
         }
         headers.forEach { self.addValue($1, forHTTPHeaderField: $0) }
     }

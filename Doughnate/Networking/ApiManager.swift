@@ -67,4 +67,8 @@ class ApiManager {
         networkManager.perform(request, completion: completion)
     }
     
+    func subscribe(projectId: Int, subscriptionId: Int, token: String, completion: @escaping SimpleResponseCompletion<NetworkError>) {
+        let request = Requests.subscribe(projectId: projectId, subscriptionId: subscriptionId, token: token)
+        networkManager.perform(request, completion: completion)
+    }
 }

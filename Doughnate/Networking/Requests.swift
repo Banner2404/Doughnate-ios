@@ -76,4 +76,14 @@ class Requests {
                           path: ["reports/"],
                           body: body)!
     }
+    
+    static func subscribe(projectId: Int, subscriptionId: Int, token: String) -> URLRequest {
+        let body: [String: Any] =
+            ["subscription_plan_id": subscriptionId]
+        return URLRequest(method: .post,
+                          domain: ApiUrl.host,
+                          path: ["projects", String(projectId), "subscribe/"],
+                          body: body,
+                          token: token)!
+    }
 }

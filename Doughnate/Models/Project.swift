@@ -16,7 +16,7 @@ struct Project: Decodable {
     let subscribers: Int
     let category: Category
     let subscriptions: [SubscriptionType]
-    let activeSubscription: SubscriptionType?
+    var activeSubscription: SubscriptionType?
     
     var subscribersString: String {
         return subscribers.shortString + " subscribers"
@@ -35,7 +35,7 @@ struct Project: Decodable {
         self.subscribers = 100
         self.category = .youtube
         self.subscriptions = try container.decode([SubscriptionType].self, forKey: .subscriptions)
-        self.activeSubscription = self.subscriptions.first
+        self.activeSubscription = nil
     }
     
     enum CodingKeys: String, CodingKey {

@@ -55,7 +55,7 @@ private extension ProjectDetailsViewController {
         descriptionLabel.text = project.description
         subscriptionsStackView.arrangedSubviews.forEach {
             subscriptionsStackView.removeArrangedSubview($0)
-            subscriptionsStackView.removeFromSuperview()
+            $0.removeFromSuperview()
         }
         displayedSubscriptions.forEach {
             subscriptionsStackView.addArrangedSubview(createSubscriptionView(for: $0))
@@ -83,7 +83,17 @@ private extension ProjectDetailsViewController {
     
     func subscribe(to subscription: SubscriptionType) {
         showAlert(title: "Subscribe?", message: "Do you want to subscribe to $\(subscription.amount) plan?") {
-            print(subscription)
+            guard let token = UserManager.shared.token?.accessToken else { return }
+            ApiManager.shared.subscribe(projectId: self.project.id, subscriptionId: subscription.id, token: token, completion: { response in
+                switch response {
+                case .failure(let error):
+                    print(error)
+                    self.showErrorAlert(with: "Failed to subscribe")
+                case .success:
+                    self.project.activeSubscription = subscription
+                    self.setupProjectInfo()
+                }
+            })
         }
     }
     

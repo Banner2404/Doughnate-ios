@@ -9,7 +9,8 @@
 import Foundation
 
 struct SubscriptionType: Decodable {
-    
+
+    let id: Int
     let interval: Interval
     let amount: Int
     let description: String
