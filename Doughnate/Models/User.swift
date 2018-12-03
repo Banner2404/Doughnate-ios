@@ -21,8 +21,8 @@ struct User: Codable {
         self.id = try container.decode(Int.self, forKey: .id)
         self.firstName = try container.decode(String.self, forKey: .firstName)
         self.lastName = try container.decode(String.self, forKey: .lastName)
-        self.email = "123@test.com"
-        self.isTwoFactorAuthenticationEnabled = true
+        self.email = try container.decode(String.self, forKey: .email)
+        self.isTwoFactorAuthenticationEnabled = try container.decode(Bool.self, forKey: .isTwoFactorAuthenticationEnabled)
         self.creditCards = []
     }
     
@@ -39,5 +39,7 @@ struct User: Codable {
         case id
         case firstName = "first_name"
         case lastName = "last_name"
+        case isTwoFactorAuthenticationEnabled = "two_factor_auth_enabled"
+        case email
     }
 }
