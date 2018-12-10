@@ -23,7 +23,7 @@ struct User: Codable {
         self.lastName = try container.decode(String.self, forKey: .lastName)
         self.email = try container.decode(String.self, forKey: .email)
         self.isTwoFactorAuthenticationEnabled = try container.decode(Bool.self, forKey: .isTwoFactorAuthenticationEnabled)
-        self.creditCards = []
+        self.creditCards = [CreditCard(lastFour: "4242", brand: .visa), CreditCard(lastFour: "5555", brand: .mastercard)]
     }
     
     init(firstName: String, lastName: String, email: String, creditCards: [CreditCard]) {

@@ -150,13 +150,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Projects" largeTitleDisplayMode="always" id="J9i-zq-rL7">
-                        <barButtonItem key="rightBarButtonItem" title="Filters" id="gEk-fW-ROn">
-                            <connections>
-                                <segue destination="4QQ-z7-0bW" kind="show" id="QOv-CT-ORh"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Projects" largeTitleDisplayMode="always" id="J9i-zq-rL7"/>
                     <connections>
                         <outlet property="spinnerView" destination="LL8-8X-Vap" id="xjz-hf-rmx"/>
                         <outlet property="tableView" destination="Twz-LQ-FxK" id="HVH-6d-wN8"/>
@@ -590,8 +584,9 @@
         <scene sceneID="AUp-FS-fDd">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="F7u-Dc-084" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Projects" id="2zI-Xo-DoT"/>
+                    <tabBarItem key="tabBarItem" title="Projects" image="bean_list_tab" id="tri-I2-F7i"/>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="Sfv-gq-PYm">
                         <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -609,7 +604,7 @@
         <scene sceneID="fTP-fI-cvs">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fFK-Ei-qUm" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" id="tqC-c5-eEH"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="account_tab" id="tqC-c5-eEH"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="6xm-1G-PqB">
                         <rect key="frame" x="0.0" y="20" width="375" height="96"/>
@@ -1153,6 +1148,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="emailLabel" destination="H99-6s-sSq" id="kBS-MN-Ak8"/>
                         <outlet property="firstNameTextField" destination="kbi-e7-cpG" id="I90-pC-zQb"/>
@@ -1465,8 +1461,12 @@
             <point key="canvasLocation" x="3606" y="-169"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="account_tab" width="25" height="25"/>
+        <image name="bean_list_tab" width="22" height="26"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="tEw-Vt-RWK"/>
-        <segue reference="x8F-yp-kl0"/>
+        <segue reference="2nR-Bf-OVR"/>
     </inferredMetricsTieBreakers>
 </document>
