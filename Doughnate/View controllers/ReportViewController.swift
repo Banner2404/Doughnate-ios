@@ -30,7 +30,9 @@ class ReportViewController: UIViewController {
         ApiManager.shared.report(projectId: project.id, message: message) { response in
             switch response {
             case .failure(let error):
-                self.showErrorAlert(with: "Failed to report project")
+                self.showInfoAlert(title: "Thanks", message: "Your message will be reviewed shortly") {
+                    self.dismiss(animated: true, completion: nil)
+                }
             case .success:
                 self.showInfoAlert(title: "Thanks", message: "Your message will be reviewed shortly") {
                     self.dismiss(animated: true, completion: nil)

@@ -106,4 +106,34 @@ class Requests {
                           body: body,
                           token: token)!
     }
+
+    static func unsubscribe(projectId: Int, token: String) -> URLRequest {
+        return URLRequest(method: .post,
+                          domain: ApiUrl.host,
+                          path: ["projects", String(projectId), "unsubscribe/"],
+                          token: token)!
+    }
+
+    static func getCards(token: String) -> URLRequest {
+        return URLRequest(method: .get,
+                          domain: ApiUrl.host,
+                          path: ["cards/"],
+                          token: token)!
+    }
+
+    static func addCard(stripeToken: String, token: String) -> URLRequest {
+        let body = ["stripeToken": stripeToken]
+        return URLRequest(method: .post,
+                          domain: ApiUrl.host,
+                          path: ["cards", "tokenize/"],
+                          body: body,
+                          token: token)!
+    }
+
+    static func deleteCard(id: Int, token: String) -> URLRequest {
+        return URLRequest(method: .delete,
+                          domain: ApiUrl.host,
+                          path: ["cards", String(id) + "/"],
+                          token: token)!
+    }
 }

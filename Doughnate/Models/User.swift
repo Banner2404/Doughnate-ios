@@ -14,8 +14,7 @@ struct User: Codable {
     let lastName: String
     let email: String
     let isTwoFactorAuthenticationEnabled: Bool
-    let creditCards: [CreditCard]
-    
+
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.id = try container.decode(Int.self, forKey: .id)
@@ -23,16 +22,14 @@ struct User: Codable {
         self.lastName = try container.decode(String.self, forKey: .lastName)
         self.email = try container.decode(String.self, forKey: .email)
         self.isTwoFactorAuthenticationEnabled = try container.decode(Bool.self, forKey: .isTwoFactorAuthenticationEnabled)
-        self.creditCards = [CreditCard(lastFour: "4242", brand: .visa), CreditCard(lastFour: "5555", brand: .mastercard)]
     }
     
-    init(firstName: String, lastName: String, email: String, creditCards: [CreditCard]) {
+    init(firstName: String, lastName: String, email: String) {
         self.id = 6
         self.firstName = firstName
         self.lastName = lastName
         self.email = email
         self.isTwoFactorAuthenticationEnabled = true
-        self.creditCards = creditCards
     }
     
     enum CodingKeys: String, CodingKey {

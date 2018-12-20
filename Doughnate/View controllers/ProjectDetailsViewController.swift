@@ -11,8 +11,9 @@ import UIKit
 class ProjectDetailsViewController: UIViewController {
 
     var project: Project!
+    var user: Int!
     var displayedSubscriptions: [SubscriptionType] {
-        if let sub = project.activeSubscription {
+        if let sub = project.activeSubscription(user: user) {
             return [sub]
         } else {
             return project.subscriptions
@@ -27,6 +28,7 @@ class ProjectDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        user = UserManager.shared.user?.id
         setupProjectInfo()
     }
     
@@ -37,7 +39,20 @@ class ProjectDetailsViewController: UIViewController {
     }
     @IBAction func unsubscribeButtonTap(_ sender: Any) {
         showAlert(title: "Unsubscribe?", message: "Do you want to unsubscribe from \(project.name)") {
-            print("Cancel")
+            self.unsubscribe()
+        }
+    }
+
+    func unsubscribe() {
+        guard let token = UserManager.shared.token?.accessToken else { return }
+        ApiManager.shared.unsubscribe(projectId: project.id, token: token) { response in
+            switch response {
+            case .failure(let error):
+                print(error)
+                self.showErrorAlert(with: "Unable to unsubscribe")
+            case .success:
+                print("Test")
+            }
         }
     }
     
@@ -49,8 +64,8 @@ private extension ProjectDetailsViewController {
     func setupProjectInfo() {
         navigationItem.title = project.name
         titleLabel.text = project.name
-        unsubscribeButton.isHidden = !project.isSubscribed
-        subscriptionsTitle.text = project.isSubscribed ? "You are Subscribed" : "Subscriptions"
+        unsubscribeButton.isHidden = !project.isSubscribed(user: user)
+        subscriptionsTitle.text = project.isSubscribed(user: user) ? "You are Subscribed" : "Subscriptions"
         subscribersLabel.text = project.subscribersString
         descriptionLabel.text = project.description
         subscriptionsStackView.arrangedSubviews.forEach {
@@ -74,7 +89,7 @@ private extension ProjectDetailsViewController {
     
     @objc
     func subscriptionCellTap(_ recognizer: UIGestureRecognizer) {
-        guard !project.isSubscribed else { return }
+        guard !project.isSubscribed(user: user) else { return }
         guard let cell = recognizer.view else { return }
         guard let index = subscriptionsStackView.arrangedSubviews.firstIndex(of: cell) else { return }
         let subscription = project.subscriptions[index]
@@ -90,7 +105,7 @@ private extension ProjectDetailsViewController {
                     print(error)
                     self.showErrorAlert(with: "Failed to subscribe")
                 case .success:
-                    self.project.activeSubscription = subscription
+                    self.project.activeSubscriptions.append(ActiveSubscription(plan: subscription, userId: self.user)) 
                     self.setupProjectInfo()
                 }
             })

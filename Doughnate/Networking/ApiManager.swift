@@ -71,6 +71,11 @@ class ApiManager {
         let request = Requests.subscribe(projectId: projectId, subscriptionId: subscriptionId, token: token)
         networkManager.perform(request, completion: completion)
     }
+
+    func unsubscribe(projectId: Int, token: String, completion: @escaping SimpleResponseCompletion<NetworkError>) {
+        let request = Requests.unsubscribe(projectId: projectId, token: token)
+        networkManager.perform(request, completion: completion)
+    }
     
     func enableTwoFactorAuth(phone: String, userId: Int, token: String, completion: @escaping ResponseCompletion<User, NetworkError>) {
         let request = Requests.enableTwoFactorAuth(userId: userId, phone: phone, token: token)
@@ -80,5 +85,21 @@ class ApiManager {
     func disableTwoFactorAuth(userId: Int, token: String, completion: @escaping ResponseCompletion<User, NetworkError>) {
         let request = Requests.disableTwoFactorAuth(userId: userId, token: token)
         networkManager.perform(request, responseType: User.self, completion: completion)
+    }
+
+    func getCards(token: String, completion: @escaping ResponseCompletion<[CreditCard], NetworkError>) {
+        let request = Requests.getCards(token: token)
+        networkManager.perform(request, responseType: [CreditCard].self, completion: completion)
+    }
+
+    func addCard(stripeToken: String, token: String, completion: @escaping ResponseCompletion<CreditCard, NetworkError>) {
+        let request = Requests.addCard(stripeToken: stripeToken, token: token)
+        print(request.allHTTPHeaderFields)
+        networkManager.perform(request, responseType: CreditCard.self, completion: completion)
+    }
+
+    func deleteCard(id: Int, token: String, completion: @escaping SimpleResponseCompletion<NetworkError>) {
+        let request = Requests.deleteCard(id: id, token: token)
+        networkManager.perform(request, completion: completion)
     }
 }

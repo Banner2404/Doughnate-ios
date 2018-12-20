@@ -9,11 +9,13 @@
 import UIKit
 
 struct CreditCard: Codable {
-    
+
+    let id: Int
     let lastFour: String
     let brand: Brand
     
     init(lastFour: String, brand: Brand) {
+        self.id = 0
         self.lastFour = lastFour
         self.brand = brand
     }
@@ -23,6 +25,7 @@ struct CreditCard: Codable {
         self.lastFour = try container.decode(String.self, forKey: .lastFour)
         let brand = try container.decode(String.self, forKey: .brand)
         self.brand = Brand(string: brand)
+        self.id = try container.decode(Int.self, forKey: .id)
     }
     
     func encode(to encoder: Encoder) throws {
@@ -32,7 +35,8 @@ struct CreditCard: Codable {
     }
     
     enum CodingKeys: String, CodingKey {
-        case lastFour
+        case id
+        case lastFour = "number_last4"
         case brand
     }
     

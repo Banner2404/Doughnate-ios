@@ -30,6 +30,7 @@ extension URLRequest {
         self.addValue("application/json", forHTTPHeaderField: "Accept")
         if let token = token {
             self.addValue("Token " + token, forHTTPHeaderField: "Authorization")
+            print("Token \(token)")
         }
         headers.forEach { self.addValue($1, forHTTPHeaderField: $0) }
     }
