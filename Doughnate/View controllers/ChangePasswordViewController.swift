@@ -28,23 +28,23 @@ class ChangePasswordViewController: UIViewController {
         let oldPassword = currentPasswordTextField.text ?? ""
         let newPassword = newPasswordTextField.text ?? ""
         let repeatPassword = repeatPasswordTextField.text ?? ""
-        
+        guard let token = UserManager.shared.token?.accessToken else { return }
         
         if newPassword != repeatPassword {
             showErrorAlert(with: "Passwords do not match")
             return
         }
         activityIndicator.startAnimating()
-        ApiManager.shared.changePassword(old: oldPassword, new: newPassword) { response in
+        ApiManager.shared.changePassword(old: oldPassword, new: newPassword, token: token) { response in
             self.activityIndicator.stopAnimating()
             switch response {
             case .failure(let error):
                 print(error)
-                self.showInfoAlert(title: "Success", message: "Password was successfully changed")
-                self.navigationController?.popViewController(animated: true)
+                self.showErrorAlert(with: "Failed to change password")
             case .success:
-                self.showInfoAlert(title: "Success", message: "Password was successfully changed")
-                self.navigationController?.popViewController(animated: true)
+                self.showInfoAlert(title: "Success", message: "Password was successfully changed") {
+                    self.navigationController?.popViewController(animated: true)
+                }
             }
         }
     }

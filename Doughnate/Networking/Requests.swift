@@ -44,12 +44,13 @@ class Requests {
                           body: body)!
     }
     
-    static func changePassword(old: String, new: String) -> URLRequest {
-        let body = ["old": old, "new": new]
+    static func changePassword(old: String, new: String, token: String) -> URLRequest {
+        let body = ["current_password": old, "new_password": new]
         return URLRequest(method: .post,
                           domain: ApiUrl.host,
-                          path: ["change_password/"],
-                          body: body)!
+                          path: ["change-password/"],
+                          body: body,
+                          token: token)!
     }
     
     static func update(userId: Int, firstName: String, lastName: String, token: String) -> URLRequest {
@@ -63,8 +64,18 @@ class Requests {
     }
     
     static func enableTwoFactorAuth(userId: Int, phone: String, token: String) -> URLRequest {
-        let body: [String: Any] = ["phone": phone,
+        let body: [String: Any] = [
                     "two_factor_auth_enabled": true]
+        return URLRequest(method: .post,
+                          domain: ApiUrl.host,
+                          path: ["change-two-factor/"],
+                          body: body,
+                          token: token)!
+    }
+
+    static func update(phone: String, userId: Int, token: String) -> URLRequest {
+        let body: [String: Any] = [
+            "phone": phone]
         return URLRequest(method: .put,
                           domain: ApiUrl.host,
                           path: ["profiles", "\(userId)/"],
@@ -74,9 +85,18 @@ class Requests {
     
     static func disableTwoFactorAuth(userId: Int, token: String) -> URLRequest {
         let body: [String: Any] = ["two_factor_auth_enabled": false]
-        return URLRequest(method: .put,
+        return URLRequest(method: .post,
                           domain: ApiUrl.host,
-                          path: ["profiles", "\(userId)/"],
+                          path: ["change-two-factor/"],
+                          body: body,
+                          token: token)!
+    }
+
+    static func confirmTwoFactor(code: String, token: String) -> URLRequest {
+        let body: [String: Any] = ["code": code]
+        return URLRequest(method: .post,
+                          domain: ApiUrl.host,
+                          path: ["confirm-two-factor/"],
                           body: body,
                           token: token)!
     }

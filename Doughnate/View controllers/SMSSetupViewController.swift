@@ -23,18 +23,28 @@ class SMSSetupViewController: UIViewController {
         guard let token = UserManager.shared.token else { return }
         activityIndicator.startAnimating()
         let phone = "+375" + (phoneNumberTextField.text ?? "")
-        ApiManager.shared.enableTwoFactorAuth(phone: phone, userId: user.id, token: token.accessToken) { response in
-            self.activityIndicator.stopAnimating()
+        ApiManager.shared.update(phone: phone, userId: user.id, token: token.accessToken) { response in
             switch response {
             case .failure(let error):
                 print(error)
-                self.showErrorAlert(with: "Failed to enable two factor authentication")
-            case .success(let user):
-                UserManager.shared.update(user)
-                self.showInfoAlert(title: "Success", message: "Two factor authentication was successfully enabled") {
-                    self.navigationController?.popViewController(animated: true)
+                self.showErrorAlert(with: "Failed to update phone")
+            case .success:
+                ApiManager.shared.enableTwoFactorAuth(phone: phone, userId: user.id, token: token.accessToken) { response in
+                    self.activityIndicator.stopAnimating()
+                    self.performSegue(withIdentifier: "confirmSegue", sender: nil)
+                    //            switch response {
+                    //            case .failure(let error):
+                    //                print(error)
+                    //                self.showErrorAlert(with: "Failed to enable two factor authentication")
+                    //            case .success(let user):
+                    //                UserManager.shared.update(user)
+                    //                self.showInfoAlert(title: "Success", message: "Two factor authentication was successfully enabled") {
+                    //                    self.navigationController?.popViewController(animated: true)
+                    //                }
+                    //            }
                 }
             }
         }
+
     }
 }

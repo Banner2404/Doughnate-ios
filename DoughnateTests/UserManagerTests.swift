@@ -42,4 +42,20 @@ class UserManagerTests: XCTestCase {
         XCTAssertNil(UserManager.shared.token)
 
     }
+
+    func testUpdateUser() {
+        let user1 = User(firstName: "first", lastName: "last", email: "email")
+        let user2 = User(firstName: "first2", lastName: "last3", email: "email4")
+
+        let token = Token(accessToken: "token")
+        let account = Account(user: user1, token: token)
+        UserManager.shared.authenticate(with: account)
+        UserManager.shared.update(user2)
+        XCTAssertTrue(UserManager.shared.isAuthenticated)
+        XCTAssertEqual(UserManager.shared.user?.email, user2.email)
+        XCTAssertEqual(UserManager.shared.user?.lastName, user2.lastName)
+        XCTAssertEqual(UserManager.shared.user?.firstName, user2.firstName)
+        XCTAssertEqual(UserManager.shared.token?.accessToken, token.accessToken)
+
+    }
 }

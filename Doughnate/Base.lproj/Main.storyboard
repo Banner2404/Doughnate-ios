@@ -1231,6 +1231,7 @@
                     <connections>
                         <outlet property="activityIndicator" destination="2Is-eU-nkf" id="g5s-80-Cpo"/>
                         <outlet property="phoneNumberTextField" destination="Qrm-tg-KSz" id="nI0-D8-0WN"/>
+                        <segue destination="UYi-5c-YMh" kind="show" identifier="confirmSegue" id="kEy-96-xfT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kBX-L2-cJt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1462,6 +1463,75 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EgD-er-tNN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3606" y="-169"/>
+        </scene>
+        <!--Phone Verification-->
+        <scene sceneID="sG9-df-wU8">
+            <objects>
+                <viewController id="UYi-5c-YMh" customClass="SMSConfirmViewController" customModule="Doughnate" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="E1G-jn-hEv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="unY-tx-Ybb">
+                                <rect key="frame" x="50" y="165" width="275" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" textContentType="one-time-code"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter code from SMS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nN1-Pb-FuK">
+                                <rect key="frame" x="78.5" y="114" width="218" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sWJ-Mj-ws5">
+                                <rect key="frame" x="112.5" y="245" width="150" height="50"/>
+                                <color key="backgroundColor" red="0.88235294119999996" green="0.20784313730000001" blue="0.57254901960000004" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="Mjc-n5-EgO"/>
+                                    <constraint firstAttribute="height" constant="50" id="OjU-jQ-1rP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="signUpButtonTap:" destination="mtW-4V-5md" eventType="touchUpInside" id="DjO-Oo-HPE"/>
+                                    <action selector="submitButtonTap:" destination="UYi-5c-YMh" eventType="touchUpInside" id="VNZ-Ld-1Ru"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="v7G-EZ-FdL">
+                                <rect key="frame" x="77.5" y="260" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="unY-tx-Ybb" firstAttribute="top" secondItem="nN1-Pb-FuK" secondAttribute="bottom" constant="30" id="6Mh-Zk-FA6"/>
+                            <constraint firstItem="nN1-Pb-FuK" firstAttribute="centerX" secondItem="E1G-jn-hEv" secondAttribute="centerX" id="G2C-MN-6fD"/>
+                            <constraint firstItem="sWJ-Mj-ws5" firstAttribute="leading" secondItem="v7G-EZ-FdL" secondAttribute="trailing" constant="15" id="OPy-bZ-bB6"/>
+                            <constraint firstItem="kNO-yC-k8k" firstAttribute="trailing" secondItem="unY-tx-Ybb" secondAttribute="trailing" constant="50" id="TXk-9U-LB8"/>
+                            <constraint firstItem="unY-tx-Ybb" firstAttribute="leading" secondItem="kNO-yC-k8k" secondAttribute="leading" constant="50" id="VH4-Tj-0Ud"/>
+                            <constraint firstItem="sWJ-Mj-ws5" firstAttribute="top" secondItem="unY-tx-Ybb" secondAttribute="bottom" constant="50" id="m6B-al-bz7"/>
+                            <constraint firstItem="sWJ-Mj-ws5" firstAttribute="centerX" secondItem="E1G-jn-hEv" secondAttribute="centerX" id="p9g-Dk-VU4"/>
+                            <constraint firstItem="nN1-Pb-FuK" firstAttribute="top" secondItem="kNO-yC-k8k" secondAttribute="top" constant="50" id="pFn-ic-evR"/>
+                            <constraint firstItem="v7G-EZ-FdL" firstAttribute="centerY" secondItem="sWJ-Mj-ws5" secondAttribute="centerY" id="tRm-i4-adW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kNO-yC-k8k"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Phone Verification" id="905-SO-n9Z"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="v7G-EZ-FdL" id="3q5-0y-n0T"/>
+                        <outlet property="codeTextField" destination="unY-tx-Ybb" id="z2a-UY-P8L"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nNY-fe-3Zd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4338" y="1205"/>
         </scene>
     </scenes>
     <resources>

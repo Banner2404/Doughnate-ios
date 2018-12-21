@@ -39,8 +39,11 @@ class AccountSettingsTableViewController: UITableViewController {
                 case .failure(let error):
                     self.smsSwitch.isOn = true
                     self.showErrorAlert(with: "Failed to disable two factor authentication")
-                case .success(let user):
-                    UserManager.shared.update(user)
+                case .success:
+                    if var user = UserManager.shared.user {
+                        user.isTwoFactorAuthenticationEnabled = false
+                        UserManager.shared.update(user)
+                    }
                 }
             }
         }

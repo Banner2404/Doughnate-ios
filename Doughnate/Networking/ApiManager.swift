@@ -47,8 +47,8 @@ class ApiManager {
         networkManager.perform(request, completion: completion)
     }
     
-    func changePassword(old: String, new: String, completion: @escaping SimpleResponseCompletion<NetworkError>) {
-        let request = Requests.changePassword(old: old, new: new)
+    func changePassword(old: String, new: String, token: String, completion: @escaping SimpleResponseCompletion<NetworkError>) {
+        let request = Requests.changePassword(old: old, new: new, token: token)
         networkManager.perform(request, completion: completion)
     }
     
@@ -77,14 +77,24 @@ class ApiManager {
         networkManager.perform(request, completion: completion)
     }
     
-    func enableTwoFactorAuth(phone: String, userId: Int, token: String, completion: @escaping ResponseCompletion<User, NetworkError>) {
+    func enableTwoFactorAuth(phone: String, userId: Int, token: String, completion: @escaping SimpleResponseCompletion<NetworkError>) {
         let request = Requests.enableTwoFactorAuth(userId: userId, phone: phone, token: token)
-        networkManager.perform(request, responseType: User.self, completion: completion)
+        networkManager.perform(request, completion: completion)
+    }
+
+    func update(phone: String, userId: Int, token: String, completion: @escaping SimpleResponseCompletion<NetworkError>) {
+        let request = Requests.update(phone: phone, userId: userId, token: token)
+        networkManager.perform(request, completion: completion)
     }
     
-    func disableTwoFactorAuth(userId: Int, token: String, completion: @escaping ResponseCompletion<User, NetworkError>) {
+    func disableTwoFactorAuth(userId: Int, token: String, completion: @escaping SimpleResponseCompletion<NetworkError>) {
         let request = Requests.disableTwoFactorAuth(userId: userId, token: token)
-        networkManager.perform(request, responseType: User.self, completion: completion)
+        networkManager.perform(request, completion: completion)
+    }
+
+    func confirmTwoFactor(code: String, token: String, completion: @escaping SimpleResponseCompletion<NetworkError>) {
+        let request = Requests.confirmTwoFactor(code: code, token: token)
+        networkManager.perform(request, completion: completion)
     }
 
     func getCards(token: String, completion: @escaping ResponseCompletion<[CreditCard], NetworkError>) {

@@ -13,7 +13,7 @@ struct User: Codable {
     let firstName: String
     let lastName: String
     let email: String
-    let isTwoFactorAuthenticationEnabled: Bool
+    var isTwoFactorAuthenticationEnabled: Bool
 
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
