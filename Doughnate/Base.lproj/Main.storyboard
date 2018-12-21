@@ -150,7 +150,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Projects" largeTitleDisplayMode="always" id="J9i-zq-rL7"/>
+                    <navigationItem key="navigationItem" title="Projects" id="J9i-zq-rL7"/>
                     <connections>
                         <outlet property="spinnerView" destination="LL8-8X-Vap" id="xjz-hf-rmx"/>
                         <outlet property="tableView" destination="Twz-LQ-FxK" id="HVH-6d-wN8"/>

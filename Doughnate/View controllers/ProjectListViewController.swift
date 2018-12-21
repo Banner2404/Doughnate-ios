@@ -16,7 +16,7 @@ class ProjectListViewController: UIViewController {
     private var projects: [Project] = []
     
     override func viewDidLoad() {
-        loadProjects()
+        loadProjects("")
         tableView.refreshControl = UIRefreshControl()
         tableView.refreshControl?.addTarget(self, action: #selector(reloadData), for: .valueChanged)
     }
@@ -27,7 +27,6 @@ class ProjectListViewController: UIViewController {
         guard let indexPath = tableView.indexPath(for: cell) else { return }
         destination.project = projects[indexPath.section]
     }
-    
     
 }
 
@@ -49,7 +48,7 @@ private extension ProjectListViewController {
         }
     }
     
-    func loadProjects() {
+    func loadProjects(_ text: String) {
         tableView.isHidden = true
         spinnerView.isHidden = false
         ApiManager.shared.getProjects { response in
@@ -58,9 +57,10 @@ private extension ProjectListViewController {
                 print(error)
                 self.showErrorAlert(with: "Failed to load projects")
             case .success(let projects):
+                let visible = text.isEmpty ? projects : projects.filter { $0.name.lowercased().contains(text.lowercased()) }
                 self.tableView.isHidden = false
                 self.spinnerView.isHidden = true
-                self.projects = projects
+                self.projects = visible
                 self.tableView.reloadData()
             }
         }
