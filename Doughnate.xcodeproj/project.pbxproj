@@ -22,6 +22,10 @@
 		D11B25A621A2E30100ADC7F9 /* AccountSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11B25A521A2E30100ADC7F9 /* AccountSettingsTableViewController.swift */; };
 		D11B25A821A2E33C00ADC7F9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11B25A721A2E33C00ADC7F9 /* User.swift */; };
 		D157893421B3171A00B3544B /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D157893321B3171A00B3544B /* ReportViewController.swift */; };
+		D174D0E221CD173B007B426F /* DoughnateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D174D0E121CD173B007B426F /* DoughnateTests.swift */; };
+		D174D0EA21CD1982007B426F /* UserManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D174D0E921CD1982007B426F /* UserManagerTests.swift */; };
+		D174D0EC21CD1BD5007B426F /* FormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D174D0EB21CD1BD5007B426F /* FormatterTests.swift */; };
+		D174D0EE21CD1C7F007B426F /* IntShortTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D174D0ED21CD1C7F007B426F /* IntShortTests.swift */; };
 		D1788A1A21C96C32006C34D1 /* ActiveSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1788A1921C96C32006C34D1 /* ActiveSubscription.swift */; };
 		D1AB923F21B0678C00D95752 /* CreditCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1AB923E21B0678C00D95752 /* CreditCardsViewController.swift */; };
 		D1AB924121B069F400D95752 /* CreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1AB924021B069F400D95752 /* CreditCard.swift */; };
@@ -61,6 +65,16 @@
 		D1FC0DC92177722300A058F1 /* ReplaceLastSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FC0DC82177722300A058F1 /* ReplaceLastSegue.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		D174D0E421CD173B007B426F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D1FC0D8F2177247400A058F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D1FC0D962177247400A058F1;
+			remoteInfo = Doughnate;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		4B63174CF22EEF1D6072D336 /* Pods-Doughnate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doughnate.release.xcconfig"; path = "Pods/Target Support Files/Pods-Doughnate/Pods-Doughnate.release.xcconfig"; sourceTree = "<group>"; };
 		645CE2C1FA4618ED2CDA2A49 /* Pods-Doughnate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doughnate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Doughnate/Pods-Doughnate.debug.xcconfig"; sourceTree = "<group>"; };
@@ -79,6 +93,12 @@
 		D11B25A521A2E30100ADC7F9 /* AccountSettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsTableViewController.swift; sourceTree = "<group>"; };
 		D11B25A721A2E33C00ADC7F9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D157893321B3171A00B3544B /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
+		D174D0DF21CD173B007B426F /* DoughnateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DoughnateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D174D0E121CD173B007B426F /* DoughnateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoughnateTests.swift; sourceTree = "<group>"; };
+		D174D0E321CD173B007B426F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D174D0E921CD1982007B426F /* UserManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagerTests.swift; sourceTree = "<group>"; };
+		D174D0EB21CD1BD5007B426F /* FormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatterTests.swift; sourceTree = "<group>"; };
+		D174D0ED21CD1C7F007B426F /* IntShortTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntShortTests.swift; sourceTree = "<group>"; };
 		D1788A1921C96C32006C34D1 /* ActiveSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveSubscription.swift; sourceTree = "<group>"; };
 		D1AB923E21B0678C00D95752 /* CreditCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardsViewController.swift; sourceTree = "<group>"; };
 		D1AB924021B069F400D95752 /* CreditCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCard.swift; sourceTree = "<group>"; };
@@ -121,6 +141,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D174D0DC21CD173B007B426F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D1FC0D942177247400A058F1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -158,6 +185,18 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		D174D0E021CD173B007B426F /* DoughnateTests */ = {
+			isa = PBXGroup;
+			children = (
+				D174D0E121CD173B007B426F /* DoughnateTests.swift */,
+				D174D0E921CD1982007B426F /* UserManagerTests.swift */,
+				D174D0EB21CD1BD5007B426F /* FormatterTests.swift */,
+				D174D0ED21CD1C7F007B426F /* IntShortTests.swift */,
+				D174D0E321CD173B007B426F /* Info.plist */,
+			);
+			path = DoughnateTests;
+			sourceTree = "<group>";
+		};
 		D1ADA86521ABFA6B006B2CCD /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +212,7 @@
 			children = (
 				D1FC0DBF2177389000A058F1 /* .gitignore */,
 				D1FC0D992177247400A058F1 /* Doughnate */,
+				D174D0E021CD173B007B426F /* DoughnateTests */,
 				D1FC0D982177247400A058F1 /* Products */,
 				03F6C4D180ABCFF0AB4A5B86 /* Pods */,
 				B2939C02018484C346121D9E /* Frameworks */,
@@ -183,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				D1FC0D972177247400A058F1 /* Doughnate.app */,
+				D174D0DF21CD173B007B426F /* DoughnateTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -293,6 +334,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		D174D0DE21CD173B007B426F /* DoughnateTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D174D0E821CD173B007B426F /* Build configuration list for PBXNativeTarget "DoughnateTests" */;
+			buildPhases = (
+				D174D0DB21CD173B007B426F /* Sources */,
+				D174D0DC21CD173B007B426F /* Frameworks */,
+				D174D0DD21CD173B007B426F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D174D0E521CD173B007B426F /* PBXTargetDependency */,
+			);
+			name = DoughnateTests;
+			productName = DoughnateTests;
+			productReference = D174D0DF21CD173B007B426F /* DoughnateTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		D1FC0D962177247400A058F1 /* Doughnate */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D1FC0DA92177247500A058F1 /* Build configuration list for PBXNativeTarget "Doughnate" */;
@@ -318,10 +377,14 @@
 		D1FC0D8F2177247400A058F1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1000;
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Евгений Соболь";
 				TargetAttributes = {
+					D174D0DE21CD173B007B426F = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = D1FC0D962177247400A058F1;
+					};
 					D1FC0D962177247400A058F1 = {
 						CreatedOnToolsVersion = 10.0;
 					};
@@ -341,11 +404,19 @@
 			projectRoot = "";
 			targets = (
 				D1FC0D962177247400A058F1 /* Doughnate */,
+				D174D0DE21CD173B007B426F /* DoughnateTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D174D0DD21CD173B007B426F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D1FC0D952177247400A058F1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -404,6 +475,17 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D174D0DB21CD173B007B426F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D174D0EE21CD1C7F007B426F /* IntShortTests.swift in Sources */,
+				D174D0EC21CD1BD5007B426F /* FormatterTests.swift in Sources */,
+				D174D0EA21CD1982007B426F /* UserManagerTests.swift in Sources */,
+				D174D0E221CD173B007B426F /* DoughnateTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D1FC0D932177247400A058F1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -459,6 +541,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		D174D0E521CD173B007B426F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D1FC0D962177247400A058F1 /* Doughnate */;
+			targetProxy = D174D0E421CD173B007B426F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		D1FC0D9E2177247400A058F1 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -479,6 +569,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		D174D0E621CD173B007B426F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 59BWRK25DR;
+				INFOPLIST_FILE = DoughnateTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.esobol.DoughnateTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Doughnate.app/Doughnate";
+			};
+			name = Debug;
+		};
+		D174D0E721CD173B007B426F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 59BWRK25DR;
+				INFOPLIST_FILE = DoughnateTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.esobol.DoughnateTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Doughnate.app/Doughnate";
+			};
+			name = Release;
+		};
 		D1FC0DA72177247500A058F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -636,6 +768,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D174D0E821CD173B007B426F /* Build configuration list for PBXNativeTarget "DoughnateTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D174D0E621CD173B007B426F /* Debug */,
+				D174D0E721CD173B007B426F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D1FC0D922177247400A058F1 /* Build configuration list for PBXProject "Doughnate" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

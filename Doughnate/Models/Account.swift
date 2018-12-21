@@ -12,6 +12,11 @@ struct Account: Decodable {
     
     let user: User
     let token: Token
+
+    init(user: User, token: Token) {
+        self.user = user
+        self.token = token
+    }
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
