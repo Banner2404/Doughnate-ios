@@ -319,7 +319,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VJz-WL-mBb">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="440"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="568"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qqN-7F-Ej5">
                                                 <rect key="frame" x="20" y="24" width="335" height="48"/>
@@ -340,16 +340,16 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subscriptions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="rJ8-s6-WZs">
-                                                <rect key="frame" x="20" y="155" width="335" height="48"/>
+                                                <rect key="frame" x="20" y="283" width="335" height="48"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="335" placeholderIntrinsicHeight="157" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9vt-Fc-9rQ">
-                                                <rect key="frame" x="20" y="223" width="335" height="157"/>
+                                                <rect key="frame" x="20" y="351" width="335" height="157"/>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Jq-Dq-lBS">
-                                                <rect key="frame" x="20" y="400" width="87" height="30"/>
+                                                <rect key="frame" x="20" y="528" width="87" height="30"/>
                                                 <state key="normal" title="Unsubscribe">
                                                     <color key="titleColor" red="0.88235294119999996" green="0.20784313730000001" blue="0.57254901960000004" alpha="1" colorSpace="deviceRGB"/>
                                                 </state>
@@ -357,16 +357,31 @@
                                                     <action selector="unsubscribeButtonTap:" destination="XTS-Lb-dh7" eventType="touchUpInside" id="zFo-oU-cy1"/>
                                                 </connections>
                                             </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="335" placeholderIntrinsicHeight="40" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ce5-nd-VDW">
+                                                <rect key="frame" x="20" y="223" width="335" height="40"/>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Posts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="6An-1M-n7Q">
+                                                <rect key="frame" x="20" y="155" width="335" height="48"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="tkj-hs-DxM" firstAttribute="trailing" secondItem="QqL-Fu-NDd" secondAttribute="trailing" id="3rP-bt-ErH"/>
+                                            <constraint firstItem="6An-1M-n7Q" firstAttribute="trailing" secondItem="rJ8-s6-WZs" secondAttribute="trailing" id="Fe1-01-Qiv"/>
+                                            <constraint firstItem="Ce5-nd-VDW" firstAttribute="trailing" secondItem="6An-1M-n7Q" secondAttribute="trailing" id="K0m-uO-ICC"/>
+                                            <constraint firstItem="6An-1M-n7Q" firstAttribute="leading" secondItem="rJ8-s6-WZs" secondAttribute="leading" id="MEG-Yd-Xcm"/>
                                             <constraint firstItem="QqL-Fu-NDd" firstAttribute="top" secondItem="qqN-7F-Ej5" secondAttribute="bottom" constant="6" id="RbD-PH-CZD"/>
                                             <constraint firstItem="tkj-hs-DxM" firstAttribute="leading" secondItem="QqL-Fu-NDd" secondAttribute="leading" id="RjJ-mf-4wE"/>
                                             <constraint firstItem="tkj-hs-DxM" firstAttribute="top" secondItem="QqL-Fu-NDd" secondAttribute="bottom" constant="9" id="Rk6-4S-M6Y"/>
+                                            <constraint firstItem="Ce5-nd-VDW" firstAttribute="leading" secondItem="6An-1M-n7Q" secondAttribute="leading" id="VFQ-FR-bHq"/>
                                             <constraint firstItem="qqN-7F-Ej5" firstAttribute="leading" secondItem="VJz-WL-mBb" secondAttribute="leading" constant="20" id="W5A-nG-m5d"/>
+                                            <constraint firstItem="6An-1M-n7Q" firstAttribute="top" secondItem="tkj-hs-DxM" secondAttribute="bottom" constant="20" id="b1k-7w-GGK"/>
                                             <constraint firstItem="QqL-Fu-NDd" firstAttribute="leading" secondItem="qqN-7F-Ej5" secondAttribute="leading" id="bi4-Vo-Ilt"/>
                                             <constraint firstItem="9vt-Fc-9rQ" firstAttribute="trailing" secondItem="rJ8-s6-WZs" secondAttribute="trailing" id="e6h-G8-jJh"/>
+                                            <constraint firstItem="Ce5-nd-VDW" firstAttribute="top" secondItem="6An-1M-n7Q" secondAttribute="bottom" constant="20" id="hYP-EF-DHG"/>
                                             <constraint firstAttribute="trailing" secondItem="qqN-7F-Ej5" secondAttribute="trailing" constant="20" id="hll-aE-E64"/>
                                             <constraint firstItem="rJ8-s6-WZs" firstAttribute="trailing" secondItem="tkj-hs-DxM" secondAttribute="trailing" id="iol-VJ-wK9"/>
                                             <constraint firstItem="3Jq-Dq-lBS" firstAttribute="leading" secondItem="9vt-Fc-9rQ" secondAttribute="leading" id="kSk-ar-6UB"/>
@@ -377,7 +392,7 @@
                                             <constraint firstItem="QqL-Fu-NDd" firstAttribute="trailing" secondItem="qqN-7F-Ej5" secondAttribute="trailing" id="oQe-7A-W4B"/>
                                             <constraint firstItem="9vt-Fc-9rQ" firstAttribute="leading" secondItem="rJ8-s6-WZs" secondAttribute="leading" id="rNL-NH-XF0"/>
                                             <constraint firstItem="3Jq-Dq-lBS" firstAttribute="top" secondItem="9vt-Fc-9rQ" secondAttribute="bottom" constant="20" id="rua-7u-ztg"/>
-                                            <constraint firstItem="rJ8-s6-WZs" firstAttribute="top" secondItem="tkj-hs-DxM" secondAttribute="bottom" constant="20" id="wEA-7O-2y9"/>
+                                            <constraint firstItem="rJ8-s6-WZs" firstAttribute="top" secondItem="Ce5-nd-VDW" secondAttribute="bottom" constant="20" id="tPV-nV-MZQ"/>
                                             <constraint firstItem="qqN-7F-Ej5" firstAttribute="top" secondItem="VJz-WL-mBb" secondAttribute="top" constant="24" id="wfO-ID-J1s"/>
                                         </constraints>
                                     </view>
@@ -409,6 +424,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="descriptionLabel" destination="tkj-hs-DxM" id="0es-3D-o1J"/>
+                        <outlet property="postsStackView" destination="Ce5-nd-VDW" id="FEl-kt-Zvu"/>
                         <outlet property="subscribersLabel" destination="QqL-Fu-NDd" id="FEr-b8-heq"/>
                         <outlet property="subscriptionsStackView" destination="9vt-Fc-9rQ" id="xG8-BB-9RN"/>
                         <outlet property="subscriptionsTitle" destination="rJ8-s6-WZs" id="9Uc-P1-MAL"/>
@@ -418,7 +434,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PW3-AA-dW1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2780" y="134"/>
+            <point key="canvasLocation" x="2780" y="133.5832083958021"/>
         </scene>
         <!--Report Project-->
         <scene sceneID="p5u-hX-zRq">

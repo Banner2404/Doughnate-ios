@@ -35,7 +35,7 @@ private extension ProjectListViewController {
     
     @objc
     func reloadData() {
-        ApiManager.shared.getProjects { response in
+        ApiManager.shared.getProjects(token: UserManager.shared.token?.accessToken) { response in
             self.tableView.refreshControl?.endRefreshing()
             switch response {
             case .failure(let error):
@@ -51,7 +51,7 @@ private extension ProjectListViewController {
     func loadProjects(_ text: String) {
         tableView.isHidden = true
         spinnerView.isHidden = false
-        ApiManager.shared.getProjects { response in
+        ApiManager.shared.getProjects(token: UserManager.shared.token?.accessToken) { response in
             switch response {
             case .failure(let error):
                 print(error)

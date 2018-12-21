@@ -22,6 +22,9 @@
 		D11B25A621A2E30100ADC7F9 /* AccountSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11B25A521A2E30100ADC7F9 /* AccountSettingsTableViewController.swift */; };
 		D11B25A821A2E33C00ADC7F9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11B25A721A2E33C00ADC7F9 /* User.swift */; };
 		D131AC2921CD344E00F74010 /* SMSConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D131AC2821CD344E00F74010 /* SMSConfirmViewController.swift */; };
+		D131AC2B21CD46B300F74010 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = D131AC2A21CD46B300F74010 /* Post.swift */; };
+		D131AC2D21CD490700F74010 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D131AC2C21CD490700F74010 /* PostView.swift */; };
+		D131AC2F21CD491100F74010 /* PostView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D131AC2E21CD491100F74010 /* PostView.xib */; };
 		D157893421B3171A00B3544B /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D157893321B3171A00B3544B /* ReportViewController.swift */; };
 		D174D0E221CD173B007B426F /* DoughnateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D174D0E121CD173B007B426F /* DoughnateTests.swift */; };
 		D174D0EA21CD1982007B426F /* UserManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D174D0E921CD1982007B426F /* UserManagerTests.swift */; };
@@ -94,6 +97,9 @@
 		D11B25A521A2E30100ADC7F9 /* AccountSettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsTableViewController.swift; sourceTree = "<group>"; };
 		D11B25A721A2E33C00ADC7F9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D131AC2821CD344E00F74010 /* SMSConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSConfirmViewController.swift; sourceTree = "<group>"; };
+		D131AC2A21CD46B300F74010 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		D131AC2C21CD490700F74010 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		D131AC2E21CD491100F74010 /* PostView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostView.xib; sourceTree = "<group>"; };
 		D157893321B3171A00B3544B /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		D174D0DF21CD173B007B426F /* DoughnateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DoughnateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D174D0E121CD173B007B426F /* DoughnateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoughnateTests.swift; sourceTree = "<group>"; };
@@ -286,6 +292,7 @@
 				D1DE4F2321B19FD400295C54 /* SubscriptionType.swift */,
 				D107466F21B454950068536F /* Subscription.swift */,
 				D1788A1921C96C32006C34D1 /* ActiveSubscription.swift */,
+				D131AC2A21CD46B300F74010 /* Post.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -297,6 +304,8 @@
 				D1FC0DB121772B0700A058F1 /* Cells */,
 				D1DE4F2521B1A24400295C54 /* SubscriptionTypeView.swift */,
 				D1DE4F2721B1A25600295C54 /* SubscriptionTypeView.xib */,
+				D131AC2C21CD490700F74010 /* PostView.swift */,
+				D131AC2E21CD491100F74010 /* PostView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -426,6 +435,7 @@
 			files = (
 				D1FC0DC02177389000A058F1 /* .gitignore in Resources */,
 				D1DE4F2821B1A25600295C54 /* SubscriptionTypeView.xib in Resources */,
+				D131AC2F21CD491100F74010 /* PostView.xib in Resources */,
 				D1FC0DA52177247500A058F1 /* LaunchScreen.storyboard in Resources */,
 				D1FC0DA22177247500A058F1 /* Assets.xcassets in Resources */,
 				D1FC0DA02177247400A058F1 /* Main.storyboard in Resources */,
@@ -500,6 +510,7 @@
 				D1788A1A21C96C32006C34D1 /* ActiveSubscription.swift in Sources */,
 				D11B25A621A2E30100ADC7F9 /* AccountSettingsTableViewController.swift in Sources */,
 				D107467221B45D1F0068536F /* Account.swift in Sources */,
+				D131AC2D21CD490700F74010 /* PostView.swift in Sources */,
 				D11B259721A2C52D00ADC7F9 /* LoginViewController.swift in Sources */,
 				D1FC0D9D2177247400A058F1 /* ProjectListViewController.swift in Sources */,
 				D1FC0DC621775F6700A058F1 /* Filter.swift in Sources */,
@@ -520,6 +531,7 @@
 				D11B259C21A2C87A00ADC7F9 /* UserManager.swift in Sources */,
 				D11B25A821A2E33C00ADC7F9 /* User.swift in Sources */,
 				D1FC0DC2217739F500A058F1 /* FiltersViewController.swift in Sources */,
+				D131AC2B21CD46B300F74010 /* Post.swift in Sources */,
 				D1ADA86D21AC0BBA006B2CCD /* PhoneVerificationViewController.swift in Sources */,
 				D107466C21B453550068536F /* SubscriptionTableViewCell.swift in Sources */,
 				D107467021B454950068536F /* Subscription.swift in Sources */,

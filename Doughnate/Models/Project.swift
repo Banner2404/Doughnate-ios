@@ -15,6 +15,7 @@ struct Project: Decodable {
     let subscribers: Int
     let category: Category
     let subscriptions: [SubscriptionType]
+    let posts: [Post]
     var activeSubscriptions: [ActiveSubscription]
 
     private let imageUrlString: String
@@ -45,6 +46,7 @@ struct Project: Decodable {
         self.category = .youtube
         self.subscriptions = try container.decode([SubscriptionType].self, forKey: .subscriptions)
         self.activeSubscriptions = try container.decode([ActiveSubscription].self, forKey: .activeSubscriptions)
+        self.posts = try container.decode([Post].self, forKey: .posts)
     }
     
     init() {
@@ -55,6 +57,7 @@ struct Project: Decodable {
         self.category = .music
         self.subscriptions = []
         self.activeSubscriptions = []
+        self.posts = []
         self.imageUrlString = "https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/581500_370263239723489_1400672702_n.jpg?_nc_cat=107&_nc_ht=scontent-frt3-2.xx&oh=4bd731c2b50c2bf782f18da8edc82817&oe=5C9E2D17"
     }
     
@@ -65,5 +68,6 @@ struct Project: Decodable {
         case subscriptions = "subscription_plans"
         case imageUrlString = "logo_image"
         case activeSubscriptions = "subscriptions"
+        case posts
     }
 }

@@ -19,13 +19,21 @@ class ProjectDetailsViewController: UIViewController {
             return project.subscriptions
         }
     }
+    var displayedPosts: [Post] {
+        if project.isSubscribed(user: user) {
+            return project.posts
+        } else {
+            return project.posts.filter { $0.isPublic }
+        }
+    }
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var subscribersLabel: UILabel!
     @IBOutlet private weak var descriptionLabel: UILabel!
     @IBOutlet private weak var subscriptionsStackView: UIStackView!
     @IBOutlet private weak var subscriptionsTitle: UILabel!
     @IBOutlet private weak var unsubscribeButton: UIButton!
-    
+    @IBOutlet private weak var postsStackView: UIStackView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         user = UserManager.shared.user?.id
@@ -51,7 +59,7 @@ class ProjectDetailsViewController: UIViewController {
                 print(error)
                 self.showErrorAlert(with: "Unable to unsubscribe")
             case .success:
-                print("Test")
+                self.reloadProject()
             }
         }
     }
@@ -75,6 +83,27 @@ private extension ProjectDetailsViewController {
         displayedSubscriptions.forEach {
             subscriptionsStackView.addArrangedSubview(createSubscriptionView(for: $0))
         }
+
+        postsStackView.arrangedSubviews.forEach {
+            postsStackView.removeArrangedSubview($0)
+            $0.removeFromSuperview()
+        }
+
+        displayedPosts.forEach {
+            postsStackView.addArrangedSubview(createPostView(for: $0))
+        }
+    }
+
+    func reloadProject() {
+        ApiManager.shared.getProject(id: project.id, token: UserManager.shared.token?.accessToken) { response in
+            switch response {
+            case .failure(let error):
+                print(error)
+            case .success(let project):
+                self.project = project
+                self.setupProjectInfo()
+            }
+        }
     }
     
     func createSubscriptionView(for subscription: SubscriptionType) -> SubscriptionTypeView {
@@ -84,6 +113,12 @@ private extension ProjectDetailsViewController {
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(subscriptionCellTap))
         view.addGestureRecognizer(tap)
+        return view
+    }
+
+    func createPostView(for post: Post) -> PostView {
+        let view = PostView()
+        view.descriptionLabel.text = post.text
         return view
     }
     
@@ -105,8 +140,7 @@ private extension ProjectDetailsViewController {
                     print(error)
                     self.showErrorAlert(with: "Failed to subscribe")
                 case .success:
-                    self.project.activeSubscriptions.append(ActiveSubscription(plan: subscription, userId: self.user)) 
-                    self.setupProjectInfo()
+                    self.reloadProject()
                 }
             })
         }

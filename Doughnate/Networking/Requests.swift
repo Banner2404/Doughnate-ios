@@ -101,10 +101,18 @@ class Requests {
                           token: token)!
     }
     
-    static func getProjects() -> URLRequest {
+    static func getProjects(token: String?) -> URLRequest {
         return URLRequest(method: .get,
                           domain: ApiUrl.host,
-                          path: ["projects/"])!
+                          path: ["projects/"],
+                          token: token)!
+    }
+
+    static func getProject(id: Int, token: String?) -> URLRequest {
+        return URLRequest(method: .get,
+                          domain: ApiUrl.host,
+                          path: ["projects/\(id)/"],
+                          token: token)!
     }
     
     static func report(projectId: Int, message: String) -> URLRequest {
