@@ -118,10 +118,10 @@ class Requests {
     static func report(projectId: Int, message: String) -> URLRequest {
         let body: [String: Any] =
             ["project_id": projectId,
-            "message": message]
+            "text": message]
         return URLRequest(method: .post,
                           domain: ApiUrl.host,
-                          path: ["reports/"],
+                          path: ["report/"],
                           body: body)!
     }
     
@@ -162,6 +162,13 @@ class Requests {
         return URLRequest(method: .delete,
                           domain: ApiUrl.host,
                           path: ["cards", String(id) + "/"],
+                          token: token)!
+    }
+
+    static func getSubscriptions(token: String) -> URLRequest {
+        return URLRequest(method: .get,
+                          domain: ApiUrl.host,
+                          path: ["user-sub-projects/"],
                           token: token)!
     }
 }

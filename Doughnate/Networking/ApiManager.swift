@@ -109,12 +109,16 @@ class ApiManager {
 
     func addCard(stripeToken: String, token: String, completion: @escaping ResponseCompletion<CreditCard, NetworkError>) {
         let request = Requests.addCard(stripeToken: stripeToken, token: token)
-        print(request.allHTTPHeaderFields)
         networkManager.perform(request, responseType: CreditCard.self, completion: completion)
     }
 
     func deleteCard(id: Int, token: String, completion: @escaping SimpleResponseCompletion<NetworkError>) {
         let request = Requests.deleteCard(id: id, token: token)
         networkManager.perform(request, completion: completion)
+    }
+
+    func getSubscriptions(token: String, completion: @escaping ResponseCompletion<ProjectWrapper, NetworkError>) {
+        let request = Requests.getSubscriptions(token: token)
+        networkManager.perform(request, responseType: ProjectWrapper.self, completion: completion)
     }
 }

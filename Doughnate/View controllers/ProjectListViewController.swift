@@ -9,16 +9,20 @@
 import UIKit
 import Kingfisher
 
-class ProjectListViewController: UIViewController {
+class ProjectListViewController: UITableViewController, UISearchResultsUpdating {
 
-    @IBOutlet private weak var tableView: UITableView!
-    @IBOutlet private weak var spinnerView: UIStackView!
     private var projects: [Project] = []
     
     override func viewDidLoad() {
         loadProjects("")
         tableView.refreshControl = UIRefreshControl()
         tableView.refreshControl?.addTarget(self, action: #selector(reloadData), for: .valueChanged)
+
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        navigationItem.searchController = searchController
+        self.definesPresentationContext = true
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -27,7 +31,33 @@ class ProjectListViewController: UIViewController {
         guard let indexPath = tableView.indexPath(for: cell) else { return }
         destination.project = projects[indexPath.section]
     }
-    
+
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return projects.count
+    }
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(ofType: ProjectTableViewCell.self, for: indexPath)
+        let project = projects[indexPath.section]
+        cell.projectImageView.kf.setImage(with: project.imageUrl)
+        cell.projectNameLabel.text = project.name
+        cell.descriptionLabel.text = project.description
+        cell.subscribersLabel.text = project.subscribersString
+        return cell
+    }
+
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 10.0
+    }
+
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let text = searchController.searchBar.text else { return }
+        loadProjects(text)
+    }
 }
 
 //MARK: - Private
@@ -35,22 +65,10 @@ private extension ProjectListViewController {
     
     @objc
     func reloadData() {
-        ApiManager.shared.getProjects(token: UserManager.shared.token?.accessToken) { response in
-            self.tableView.refreshControl?.endRefreshing()
-            switch response {
-            case .failure(let error):
-                print(error)
-                self.showErrorAlert(with: "Failed to load projects")
-            case .success(let projects):
-                self.projects = projects
-                self.tableView.reloadData()
-            }
-        }
+        loadProjects(navigationItem.searchController?.searchBar.text ?? "")
     }
     
     func loadProjects(_ text: String) {
-        tableView.isHidden = true
-        spinnerView.isHidden = false
         ApiManager.shared.getProjects(token: UserManager.shared.token?.accessToken) { response in
             switch response {
             case .failure(let error):
@@ -58,43 +76,10 @@ private extension ProjectListViewController {
                 self.showErrorAlert(with: "Failed to load projects")
             case .success(let projects):
                 let visible = text.isEmpty ? projects : projects.filter { $0.name.lowercased().contains(text.lowercased()) }
-                self.tableView.isHidden = false
-                self.spinnerView.isHidden = true
                 self.projects = visible
                 self.tableView.reloadData()
             }
+            self.tableView.refreshControl?.endRefreshing()
         }
     }
 }
-
-//MARK: - UITableViewDataSource
-extension ProjectListViewController: UITableViewDataSource {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return projects.count
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(ofType: ProjectTableViewCell.self, for: indexPath)
-        let project = projects[indexPath.section]
-        cell.projectImageView.kf.setImage(with: project.imageUrl)
-        cell.projectNameLabel.text = project.name
-        cell.descriptionLabel.text = project.description
-        cell.subscribersLabel.text = project.subscribersString
-        cell.categoryView.backgroundColor = project.category.color
-        return cell
-    }
-}
-
-//MARK: - UITableViewDelegate
-extension ProjectListViewController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 10.0
-    }
-}
-

@@ -15,5 +15,5 @@ struct ApiUrl {
 }
 
 struct ApiKey {
-    static let stripe = "pk_test_oBQWlOHPKBdQrm4qY6rEXxbP"
+    static let stripe = "pk_test_Vc057zpFxAXYEsRrAjfQUy8J"
 }

@@ -8,6 +8,10 @@
 
 import Foundation
 
+struct ProjectWrapper: Decodable {
+    let data: [Project]
+}
+
 struct Project: Decodable {
     let id: Int
     let name: String
@@ -42,7 +46,7 @@ struct Project: Decodable {
         self.id = try container.decode(Int.self, forKey: .id)
         self.name = try container.decode(String.self, forKey: .name)
         self.description = try container.decode(String.self, forKey: .description)
-        self.subscribers = 100
+        self.subscribers = try container.decode(Int.self, forKey: .subscribers)
         self.category = .youtube
         self.subscriptions = try container.decode([SubscriptionType].self, forKey: .subscriptions)
         self.activeSubscriptions = try container.decode([ActiveSubscription].self, forKey: .activeSubscriptions)
@@ -69,5 +73,6 @@ struct Project: Decodable {
         case imageUrlString = "logo_image"
         case activeSubscriptions = "subscriptions"
         case posts
+        case subscribers = "subscribers_count"
     }
 }
