@@ -132,7 +132,7 @@ private extension ProjectDetailsViewController {
     }
     
     func subscribe(to subscription: SubscriptionType) {
-        showAlert(title: "Subscribe?", message: "Do you want to subscribe to $\(subscription.amount) plan?") {
+        showAlert(title: "Subscribe?", message: "Do you want to subscribe to \(subscription.title) plan?") {
             guard let token = UserManager.shared.token?.accessToken else { return }
             ApiManager.shared.subscribe(projectId: self.project.id, subscriptionId: subscription.id, token: token, completion: { response in
                 switch response {

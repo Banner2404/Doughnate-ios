@@ -12,11 +12,15 @@ struct SubscriptionType: Decodable {
 
     let id: Int
     let interval: Interval
-    let amount: Int
+    private let amount: Int
     let description: String
+    var price: Double {
+        return Double(amount) / 100.0
+    }
     
     var title: String {
-        return "$\(amount) per \(interval.rawValue)"
+        let price = NumberFormatter.price.string(from: NSNumber(value: self.price)) ?? String(self.price)
+        return "$\(price) per \(interval.rawValue)"
     }
     
     init() {

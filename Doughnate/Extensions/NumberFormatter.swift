@@ -15,4 +15,11 @@ extension NumberFormatter {
         formatter.maximumFractionDigits = 1
         return formatter
     }()
+
+    static var price: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.maximumFractionDigits = 2
+        formatter.minimumIntegerDigits = 1
+        return formatter
+    }()
 }
