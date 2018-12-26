@@ -26,8 +26,9 @@ class ReportViewController: UIViewController {
     }
     
     @IBAction func sendButtonTap(_ sender: Any) {
+        guard let token = UserManager.shared.token?.accessToken else { return }
         let message = textField.text ?? ""
-        ApiManager.shared.report(projectId: project.id, message: message) { response in
+        ApiManager.shared.report(projectId: project.id, message: message, token: token) { response in
             switch response {
             case .failure(let error):
                 self.showInfoAlert(title: "Thanks", message: "Your message will be reviewed shortly") {

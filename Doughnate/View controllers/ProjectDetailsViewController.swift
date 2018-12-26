@@ -10,6 +10,7 @@ import UIKit
 
 class ProjectDetailsViewController: UIViewController {
 
+    @IBOutlet weak var imageView: UIImageView!
     var project: Project!
     var user: Int!
     var displayedSubscriptions: [SubscriptionType] {
@@ -70,6 +71,7 @@ class ProjectDetailsViewController: UIViewController {
 private extension ProjectDetailsViewController {
     
     func setupProjectInfo() {
+        imageView.kf.setImage(with: project.imageUrl)
         navigationItem.title = project.name
         titleLabel.text = project.name
         unsubscribeButton.isHidden = !project.isSubscribed(user: user)
@@ -118,6 +120,7 @@ private extension ProjectDetailsViewController {
 
     func createPostView(for post: Post) -> PostView {
         let view = PostView()
+        view.dateLabel.text = post.dateString
         view.descriptionLabel.text = post.text
         return view
     }
@@ -138,7 +141,7 @@ private extension ProjectDetailsViewController {
                 switch response {
                 case .failure(let error):
                     print(error)
-                    self.showErrorAlert(with: "Failed to subscribe")
+                    self.showErrorAlert(with: "Failed to subscribe. Check your credit card added.")
                 case .success:
                     self.reloadProject()
                 }

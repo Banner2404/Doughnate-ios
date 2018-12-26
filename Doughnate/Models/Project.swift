@@ -17,7 +17,7 @@ struct Project: Decodable {
     let name: String
     let description: String
     let subscribers: Int
-    let category: Category
+    let category: String
     let subscriptions: [SubscriptionType]
     let posts: [Post]
     var activeSubscriptions: [ActiveSubscription]
@@ -25,7 +25,8 @@ struct Project: Decodable {
     private let imageUrlString: String
 
     var subscribersString: String {
-        return subscribers.shortString + " subscribers"
+        let s = subscribers == 1 ? "" : "s"
+        return subscribers.shortString + " subscriber" + s
     }
     
     var imageUrl: URL? {
@@ -47,7 +48,7 @@ struct Project: Decodable {
         self.name = try container.decode(String.self, forKey: .name)
         self.description = try container.decode(String.self, forKey: .description)
         self.subscribers = try container.decode(Int.self, forKey: .subscribers)
-        self.category = .youtube
+        self.category = try container.decode(String.self, forKey: .category)
         self.subscriptions = try container.decode([SubscriptionType].self, forKey: .subscriptions)
         self.activeSubscriptions = try container.decode([ActiveSubscription].self, forKey: .activeSubscriptions)
         self.posts = try container.decode([Post].self, forKey: .posts)
@@ -58,7 +59,7 @@ struct Project: Decodable {
         self.name = "Project 1"
         self.description = ""
         self.subscribers = 1
-        self.category = .music
+        self.category = "Art"
         self.subscriptions = []
         self.activeSubscriptions = []
         self.posts = []
@@ -74,5 +75,6 @@ struct Project: Decodable {
         case activeSubscriptions = "subscriptions"
         case posts
         case subscribers = "subscribers_count"
+        case category = "direction"
     }
 }

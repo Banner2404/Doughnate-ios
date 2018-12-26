@@ -12,7 +12,15 @@ import Kingfisher
 class ProjectListViewController: UITableViewController, UISearchResultsUpdating {
 
     private var projects: [Project] = []
-    
+    private var selectedFilters: [String] = []
+    private var visibleProjects: [Project] {
+        if selectedFilters.isEmpty {
+            return projects
+        } else {
+            return projects.filter { selectedFilters.contains($0.category) }
+        }
+    }
+
     override func viewDidLoad() {
         loadProjects("")
         tableView.refreshControl = UIRefreshControl()
@@ -26,14 +34,19 @@ class ProjectListViewController: UITableViewController, UISearchResultsUpdating 
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let destination = segue.destination as? ProjectDetailsViewController else { return }
-        guard let cell = sender as? UITableViewCell else { return }
-        guard let indexPath = tableView.indexPath(for: cell) else { return }
-        destination.project = projects[indexPath.section]
+        if let destination = segue.destination as? ProjectDetailsViewController {
+            guard let cell = sender as? UITableViewCell else { return }
+            guard let indexPath = tableView.indexPath(for: cell) else { return }
+            destination.project = visibleProjects[indexPath.section]
+        } else if let destination = segue.destination as? FiltersViewController {
+            let filters = Array(Set(projects.map { $0.category }))
+            destination.filters = filters
+        }
+
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return projects.count
+        return visibleProjects.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -42,9 +55,9 @@ class ProjectListViewController: UITableViewController, UISearchResultsUpdating 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(ofType: ProjectTableViewCell.self, for: indexPath)
-        let project = projects[indexPath.section]
+        let project = visibleProjects[indexPath.section]
         cell.projectImageView.kf.setImage(with: project.imageUrl)
-        cell.projectNameLabel.text = project.name
+        cell.projectNameLabel.text = project.name + " is creating " + project.category
         cell.descriptionLabel.text = project.description
         cell.subscribersLabel.text = project.subscribersString
         return cell
@@ -52,6 +65,11 @@ class ProjectListViewController: UITableViewController, UISearchResultsUpdating 
 
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 10.0
+    }
+
+    func reloadFilters(filters: [String]) {
+        selectedFilters = filters
+        tableView.reloadData()
     }
 
     func updateSearchResults(for searchController: UISearchController) {

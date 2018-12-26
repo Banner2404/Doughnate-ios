@@ -10,6 +10,7 @@ import UIKit
 
 class PostView: UIView {
 
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
 
     init() {

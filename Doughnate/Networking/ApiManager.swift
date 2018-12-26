@@ -67,8 +67,8 @@ class ApiManager {
         networkManager.perform(request, responseType: Project.self, completion: completion)
     }
     
-    func report(projectId: Int, message: String, completion: @escaping SimpleResponseCompletion<NetworkError>) {
-        let request = Requests.report(projectId: projectId, message: message)
+    func report(projectId: Int, message: String, token: String, completion: @escaping SimpleResponseCompletion<NetworkError>) {
+        let request = Requests.report(projectId: projectId, message: message, token: token)
         networkManager.perform(request, completion: completion)
     }
     

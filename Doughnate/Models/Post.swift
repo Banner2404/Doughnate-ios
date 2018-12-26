@@ -12,9 +12,11 @@ struct Post: Decodable {
 
     let text: String?
     let isPublic: Bool
+    let dateString: String
 
     enum CodingKeys: String, CodingKey {
         case text
         case isPublic = "is_public"
+        case dateString = "readable_created_at"
     }
 }
